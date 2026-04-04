@@ -1,0 +1,153 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Frequently Asked Questions',
+  description:
+    "Find answers to common questions about Boise Home Services — our services, pricing, process, scheduling, and service area.",
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="FAQ"
+    title="Frequently Asked Questions"
+    subtitle="Find answers to common questions about our services, pricing, process, and more. Can't find what you're looking for? Contact us or chat with our AI assistant."
+  />
+
+  <FAQs
+    title="About Our Services"
+    columns={1}
+    classes={{ container: 'max-w-4xl' }}
+    items={[
+      {
+        title: 'What services do you offer?',
+        description:
+          'We offer handyman services, plumbing, electrical, painting, remodeling, and seasonal maintenance. From a leaky faucet to a full kitchen remodel, we handle residential home services of all sizes across the Treasure Valley.',
+      },
+      {
+        title: 'What areas do you serve?',
+        description:
+          'We serve the entire Treasure Valley including Boise, Meridian, Eagle, Nampa, Caldwell, Star, and Kuna. This covers all neighborhoods from the North End to South Boise and everywhere in between.',
+      },
+      {
+        title: 'Are you licensed and insured?',
+        description:
+          "Yes. We are fully licensed and insured in the state of Idaho. Our licensing covers all the services we offer, and our insurance protects both you and our team. We're happy to provide documentation upon request.",
+      },
+      {
+        title: 'Do you offer emergency services?',
+        description:
+          'Yes. For urgent situations like active leaks, burst pipes, electrical hazards, or other safety concerns, we offer priority same-day service. Call us directly for the fastest response on emergencies.',
+      },
+      {
+        title: 'What brands and materials do you use?',
+        description:
+          'We use professional-grade materials from trusted brands. For paint, we primarily use Sherwin-Williams and Benjamin Moore. For plumbing and electrical, we use name-brand fixtures and components. We can also work with specific brands or materials you prefer.',
+      },
+      {
+        title: 'Can you work with my HOA requirements?',
+        description:
+          'Absolutely. We work with HOAs regularly across the Treasure Valley. If you have specific color requirements, material restrictions, or approval processes, just let us know and we\'ll ensure full compliance.',
+      },
+      {
+        title: 'Do you handle commercial properties?',
+        description:
+          'Our primary focus is residential homes, but we do handle small commercial projects like office painting, fixture installation, and general maintenance for small businesses in the Treasure Valley.',
+      },
+      {
+        title: 'How experienced is your team?',
+        description:
+          'Our team has over 15 years of combined experience serving Boise-area homes. Every team member is background-checked, trained, and specializes in their trade. We invest in ongoing training to stay current with building codes and best practices.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Pricing & Estimates"
+    columns={1}
+    classes={{ container: 'max-w-4xl' }}
+    items={[
+      {
+        title: 'How do you price your work — hourly or flat rate?',
+        description:
+          'It depends on the project. Simple, well-defined jobs like a faucet replacement or TV mounting are quoted at a flat rate. More variable work like handyman visits or troubleshooting may be quoted hourly. Either way, you always know the price before we start.',
+      },
+      {
+        title: 'Is the estimate really free?',
+        description:
+          "Yes, 100% free with no obligation. We provide detailed, written estimates for every project so you can make an informed decision. There's never any pressure to proceed.",
+      },
+      {
+        title: 'Do you charge for the initial consultation?',
+        description:
+          'No. For most projects, we can provide an estimate based on your description and photos. For larger projects like remodels, we may need an on-site visit — which is also free.',
+      },
+      {
+        title: 'What payment methods do you accept?',
+        description:
+          'We accept credit cards, debit cards, checks, and cash. Payment is due upon completion of the work unless other arrangements have been made in advance for larger projects.',
+      },
+      {
+        title: 'Do you offer financing for larger projects?',
+        description:
+          'For projects over a certain threshold, we can discuss payment plans and financing options. Ask about availability when you receive your estimate — we want to help make your project feasible.',
+      },
+      {
+        title: 'Are there any hidden fees?',
+        description:
+          'Never. Our estimates are detailed and transparent. If anything changes during the job — like discovering additional damage behind a wall — we discuss it with you and get approval before proceeding. What we quote is what you pay.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Scheduling & Process"
+    columns={1}
+    classes={{ container: 'max-w-4xl' }}
+    items={[
+      {
+        title: 'How far in advance do I need to schedule?',
+        description:
+          'For most services, we can schedule within 1–2 weeks. Small handyman jobs and emergency repairs may be available sooner. During busy seasons (spring and fall), booking 2–3 weeks ahead is recommended.',
+      },
+      {
+        title: 'What if I need to reschedule?',
+        description:
+          "No problem. We understand life happens. Just give us at least 24 hours' notice and we'll find a new time that works for you. There are no rescheduling fees.",
+      },
+      {
+        title: 'How long does a typical project take?',
+        description:
+          'It varies widely. A faucet replacement takes 1–2 hours. Interior painting for a bedroom takes about a day. A bathroom remodel takes 2–4 weeks. We always provide a timeline estimate alongside the cost estimate.',
+      },
+      {
+        title: 'Will someone be at my home the entire time?',
+        description:
+          'Yes. Our crew members are on-site for the duration of the work. For multi-day projects, we communicate daily about who will be there and when, so you always know what to expect.',
+      },
+      {
+        title: 'Do I need to be home during the work?',
+        description:
+          "For the initial walkthrough and final inspection, we recommend you be present. During the work itself, you're welcome to stay or leave — many customers provide a key or garage code. We'll communicate progress either way.",
+      },
+      {
+        title: 'What happens if you find additional issues during the job?',
+        description:
+          "We document the issue, explain it clearly, and provide an updated estimate. We never perform additional work without your explicit approval first. If you'd rather handle it later, that's completely fine too.",
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Still Have Questions?"
+    subtitle="Chat with our AI assistant for instant answers, or give us a call."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+  />
+</Layout>
