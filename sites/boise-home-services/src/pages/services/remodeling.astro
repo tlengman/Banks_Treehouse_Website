@@ -1,0 +1,213 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Home Remodeling in Boise',
+  description:
+    'Professional home remodeling in Boise and the Treasure Valley. Kitchen and bathroom remodels, flooring, tile, countertops, and custom projects.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Remodeling Services"
+    title="Remodel Your Boise Home with Confidence"
+    subtitle="From kitchen makeovers to bathroom transformations, we bring your vision to life — on time, on budget, and built to last."
+    actions={[
+      { variant: 'primary', text: 'Get a Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Modern renovated kitchen with white cabinets and quartz countertops',
+    }}
+  />
+
+  <Features
+    tagline="What We Do"
+    title="Remodeling Services for Every Room"
+    columns={2}
+    items={[
+      {
+        title: 'Kitchen Remodeling',
+        description: 'Layout changes, cabinet installation, countertops, and backsplash. We create kitchens that are as functional as they are beautiful.',
+        icon: 'tabler:chef-hat',
+      },
+      {
+        title: 'Bathroom Remodeling',
+        description: 'Shower and tub conversions, vanity upgrades, tile work, and fixture updates. Transform your bathroom into a space you love.',
+        icon: 'tabler:bath',
+      },
+      {
+        title: 'Basement Finishing',
+        description: 'Framing, drywall, flooring, and egress windows. Turn unused basement space into livable rooms your family will enjoy.',
+        icon: 'tabler:stairs-down',
+      },
+      {
+        title: 'Flooring Installation',
+        description: 'Hardwood, luxury vinyl plank, tile, and carpet removal. We install floors that look great and stand up to daily life.',
+        icon: 'tabler:square',
+      },
+      {
+        title: 'Tile Work',
+        description: 'Backsplash, shower tile, floor tile, and accent walls. Precise cuts, clean grout lines, and patterns that elevate your space.',
+        icon: 'tabler:grid-dots',
+      },
+      {
+        title: 'Countertop Installation',
+        description: 'Granite, quartz, butcher block, and laminate. We template, fabricate, and install countertops that fit perfectly.',
+        icon: 'tabler:layout-board-split',
+      },
+      {
+        title: 'Closet Systems',
+        description: 'Custom shelving, organizers, and walk-in closet designs. Maximize every inch of storage space in your home.',
+        icon: 'tabler:hanger',
+      },
+      {
+        title: 'Aging-in-Place Modifications',
+        description: 'Grab bars, walk-in showers, wider doorways, and ramps. Make your home safe and accessible for every stage of life.',
+        icon: 'tabler:accessible',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="What to Expect"
+    title="Remodeling Done Right"
+    items={[
+      { title: 'Detailed project plan before work starts' },
+      { title: 'Dedicated project manager for your remodel' },
+      { title: 'Daily progress updates and clear communication' },
+      { title: 'Protection of non-work areas during construction' },
+      { title: 'Final walkthrough before we call it complete' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Beautifully remodeled bathroom with modern fixtures and tile',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">From Plan to Perfection</h3>
+      Remodeling can feel overwhelming, but it doesn't have to. We walk you through every step — from design and material selection to demolition and final touches. You'll have a dedicated project manager who keeps the work on track and you in the loop.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    tagline="Local Trends"
+    title="Popular Remodeling Projects in Boise"
+    items={[
+      { title: 'Open-concept kitchen layouts popular in Harris Ranch and Paramount' },
+      { title: 'Basement finishing common in older North End homes' },
+      { title: 'Aging-in-place modifications for Boise\'s growing retiree community' },
+      { title: 'ADU conversions for multigenerational living' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Modern open-concept kitchen and living space renovation',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">We Know What Boise Wants</h3>
+      As the Treasure Valley grows, so do the remodeling trends. We stay current with what Boise homeowners want — open kitchens, spa-like bathrooms, finished basements, and accessible design. Whether you're upgrading for comfort or resale value, we know what works in this market.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    tagline="How It Works"
+    title="Our Remodeling Process"
+    items={[
+      {
+        title: 'Design Consultation',
+        description: 'We visit your home, discuss your goals, and help you envision the finished space. We bring ideas and listen to yours.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Detailed Proposal',
+        description: 'You receive a comprehensive scope of work, material list, timeline, and fixed-price quote. No surprises down the road.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Materials & Permits',
+        description: 'We help you select materials, order everything, and pull any required Ada County permits before breaking ground.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Construction',
+        description: 'Our crew works efficiently while protecting your home. Daily updates keep you informed every step of the way.',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'Final Walkthrough',
+        description: 'We walk through the finished project together, address any punch-list items, and make sure you love the result.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Contractor reviewing remodeling plans with homeowner',
+    }}
+  />
+
+  <FAQs
+    title="Remodeling FAQs"
+    columns={2}
+    items={[
+      {
+        title: 'How long does a kitchen remodel take?',
+        description:
+          'A typical kitchen remodel takes 4–8 weeks depending on scope. Simple updates (counters, backsplash, paint) take less; full gut remodels with layout changes take more.',
+      },
+      {
+        title: 'Do I need permits in Ada County?',
+        description:
+          'Most structural, electrical, and plumbing work requires permits. We handle the entire permit process for you, including scheduling inspections.',
+      },
+      {
+        title: 'Can I stay in my home during the remodel?',
+        description:
+          'Usually yes. We set up dust barriers and keep work areas contained. For major kitchen remodels, you may need to set up a temporary kitchen space.',
+      },
+      {
+        title: 'How do you handle unexpected issues?',
+        description:
+          'We document the issue, discuss options with you, and provide a change order with clear pricing before proceeding. You always approve changes first.',
+      },
+      {
+        title: 'Do you offer design help?',
+        description:
+          'Yes. We help with layout planning, material selection, and color coordination. For complex projects, we can connect you with a design partner.',
+      },
+      {
+        title: "What's the typical ROI on a kitchen or bathroom remodel?",
+        description:
+          'In the Boise market, kitchen remodels typically return 60–80% of the investment at resale. Bathroom remodels return 50–70%. Both significantly improve livability.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Ready to Remodel?"
+    subtitle="Tell us about your project and we'll create a plan that fits your vision and budget. Free consultations, detailed proposals."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+  />
+</Layout>

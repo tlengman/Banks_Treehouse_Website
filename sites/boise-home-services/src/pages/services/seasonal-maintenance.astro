@@ -1,0 +1,209 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Seasonal Home Maintenance in Boise',
+  description:
+    'Protect your Boise home year-round with professional seasonal maintenance. Winterization, spring inspections, gutter cleaning, and more.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Seasonal Maintenance"
+    title="Year-Round Protection for Your Idaho Home"
+    subtitle="Boise's climate is tough on homes — hot summers, freezing winters, and everything in between. Our seasonal maintenance keeps your home safe, efficient, and problem-free."
+    actions={[
+      { variant: 'primary', text: 'Get a Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Well-maintained home exterior in autumn with colorful fall foliage',
+    }}
+  />
+
+  <Features
+    tagline="What We Do"
+    title="Seasonal Services for Every Time of Year"
+    columns={2}
+    items={[
+      {
+        title: 'Spring Inspection & Cleanup',
+        description: 'Roof check, exterior assessment, and cleanup from winter damage. We identify issues early so they don\'t become expensive repairs.',
+        icon: 'tabler:plant',
+      },
+      {
+        title: 'HVAC Filter Service',
+        description: 'Filter replacement, efficiency check, and duct inspection. Keep your system running smoothly and your air clean — especially during wildfire season.',
+        icon: 'tabler:air-conditioning',
+      },
+      {
+        title: 'Gutter Cleaning & Repair',
+        description: 'Debris removal, downspout clearing, and leak repair. Prevent water damage to your foundation, siding, and landscaping.',
+        icon: 'tabler:filter',
+      },
+      {
+        title: 'Weatherization & Insulation',
+        description: 'Window sealing, door sweeps, and attic insulation checks. Keep your home warm in winter and cool in summer while reducing energy bills.',
+        icon: 'tabler:temperature-minus',
+      },
+      {
+        title: 'Sprinkler Winterization',
+        description: 'Professional blowout, valve inspection, and spring startup. Protect your irrigation system from Idaho\'s freezing temperatures.',
+        icon: 'tabler:droplet-off',
+      },
+      {
+        title: 'Window & Door Sealing',
+        description: 'Caulking, weatherstripping, and draft elimination. Stop air leaks that drive up heating costs during Boise\'s cold months.',
+        icon: 'tabler:window',
+      },
+      {
+        title: 'Exterior Power Washing',
+        description: 'Siding, driveways, decks, and patios. Remove dirt, mildew, and winter grime to keep your home looking its best.',
+        icon: 'tabler:wash',
+      },
+      {
+        title: 'Fall Home Preparation',
+        description: 'Furnace check, pipe insulation, roof inspection, and smoke detector testing. Get your home ready before the first freeze.',
+        icon: 'tabler:leaf',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="What to Expect"
+    title="Thorough, Preventive, Documented"
+    items={[
+      { title: 'Comprehensive inspection using our detailed checklist' },
+      { title: 'Prioritized list of issues found — urgent vs. planned' },
+      { title: 'Photos of any concerns shared with you' },
+      { title: 'Preventive recommendations to avoid future problems' },
+      { title: 'Maintenance schedule planning for the year ahead' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Professional inspector checking home exterior and taking notes',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Catch Small Problems Early</h3>
+      Our seasonal maintenance visits are designed to find issues before they become emergencies. We use a detailed checklist covering every major system in your home, prioritize what needs attention now vs. later, and document everything with photos so you can make informed decisions.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    tagline="Idaho Climate"
+    title="Why Seasonal Maintenance Matters in Idaho"
+    items={[
+      { title: 'Freeze-thaw cycles crack foundations and damage pipes' },
+      { title: 'Wildfire smoke season means extra HVAC filter attention' },
+      { title: "Boise's hard water wears on plumbing fixtures and appliances" },
+      { title: 'Spring snowmelt reveals hidden winter damage on roofs and siding' },
+      { title: 'Proper winterization prevents costly burst pipes' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Scenic Idaho landscape showing seasonal changes',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Built for Idaho's Climate</h3>
+      Living in the Treasure Valley means your home faces real climate stress — sub-zero nights in January, triple-digit heat in July, and wildfire smoke in August. Our maintenance program is designed specifically for these conditions, protecting your home from the seasonal challenges that are unique to Idaho.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    tagline="How It Works"
+    title="Our Maintenance Process"
+    items={[
+      {
+        title: 'Schedule Your Visit',
+        description: 'Choose a seasonal visit — spring, summer, fall, or winter — or sign up for our annual plan that covers all four.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Full-Home Inspection',
+        description: 'Our technician works through a comprehensive checklist covering exterior, interior, HVAC, plumbing, and safety systems.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Report & Recommendations',
+        description: 'You receive a detailed report with photos, a prioritized list of issues, and our recommendations for each one.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Address Issues',
+        description: 'For items that need immediate attention, we can often handle them during the same visit. Larger projects get scheduled separately.',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'Plan Ahead',
+        description: 'We help you plan for the next season so your home is always prepared for what Idaho weather throws at it.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Maintenance professional inspecting a home system',
+    }}
+  />
+
+  <FAQs
+    title="Seasonal Maintenance FAQs"
+    columns={2}
+    items={[
+      {
+        title: 'How often should I schedule maintenance?',
+        description:
+          'We recommend at least twice a year — once in spring and once in fall. Our annual plan includes all four seasonal visits at a discounted rate.',
+      },
+      {
+        title: 'What does a seasonal inspection cover?',
+        description:
+          'Our checklist covers roof and gutters, exterior siding, windows and doors, HVAC system, plumbing, electrical safety, smoke/CO detectors, and weatherproofing.',
+      },
+      {
+        title: 'Do you offer annual maintenance plans?',
+        description:
+          'Yes. Our annual plan includes four seasonal visits, priority scheduling, and discounted rates on any repairs identified during inspections.',
+      },
+      {
+        title: "What's the most common issue you find?",
+        description:
+          'Gutter blockages, weatherstripping failures, and HVAC filters that haven\'t been changed in too long. All are easy fixes that prevent expensive problems down the road.',
+      },
+      {
+        title: 'When should I winterize my home?',
+        description:
+          'In Boise, we recommend winterization by mid-October. This includes sprinkler blowout, pipe insulation, weather sealing, and furnace testing before the first hard freeze.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Protect Your Home Year-Round"
+    subtitle="Don't wait for a problem — prevent one. Schedule seasonal maintenance and keep your Boise home in top condition."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+  />
+</Layout>
