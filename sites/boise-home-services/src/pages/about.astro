@@ -1,228 +1,169 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About Us',
+  description:
+    "Boise Home Services is a locally-owned home maintenance and repair company serving the Treasure Valley. Learn about our team, values, and commitment to quality.",
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    tagline="About us"
+    tagline="About Us"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: 'https://images.unsplash.com/photo-1617420258879-48850c49a1d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Boise Idaho skyline with foothills in the background',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+      Your Neighbors in <span class="text-accent dark:text-white">Home Care</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      Boise Home Services is a locally-owned company rooted in the Treasure Valley community. We're homeowners ourselves,
+      and we started this business because we believe everyone deserves honest, reliable home services at a fair price. Most
+      of our work comes from referrals and repeat customers — and that's exactly the way we like it.
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
-
   <Stats
-    title="Statistics about us"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Projects Completed', amount: '500+' },
+      { title: 'Years in Boise', amount: '15+' },
+      { title: 'Average Rating', amount: '4.9★' },
+      { title: 'Response Time', amount: '24hr' },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
+  <Content
+    isReversed
+    tagline="Our Story"
+    title="Built on Trust, One Home at a Time"
     items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
+      { title: 'Started by local homeowners who saw a need' },
+      { title: 'Built on referrals and repeat customers' },
+      { title: 'Invested in our team through ongoing training' },
+      { title: 'Committed to the Treasure Valley community' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Beautiful craftsman-style homes in a Boise neighborhood',
     }}
-  />
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">A Company Born from Need</h3>
+      We started Boise Home Services after too many experiences with contractors who didn't return calls, padded estimates, or
+      left jobs half-finished. We knew the Treasure Valley deserved better. So we built a company around the principles we'd
+      want as customers: show up when you say you will, do what you promised, and charge a fair price. Fifteen years later,
+      most of our business still comes from neighbors telling neighbors — and that says more than any advertisement.
+    </Fragment>
 
-  <!-- Steps2 Widget ****************** -->
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+  <Content
+    isAfterContent
+    tagline="What We Believe"
+    title="Values That Guide Every Job"
     items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
+      { title: 'Honest estimates — no surprise charges, ever' },
+      { title: 'Quality workmanship — backed by warranty' },
+      { title: 'Respect your home — clean jobsites, always' },
+      { title: 'Community first — supporting local causes and businesses' },
     ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
+    image={{
+      src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Team collaborating on a project together',
     }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">More Than Words on a Wall</h3>
+      Our values aren't aspirational — they're the rules we live by every day. We'd rather lose a job by being honest about
+      what it costs than win one by hiding fees. We'd rather spend an extra hour cleaning up than leave a mess in your
+      home. These aren't just policies; they're the reason our customers keep calling us back.
+    </Fragment>
 
-  <!-- Features2 Widget ************** -->
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
+    tagline="Why We're Different"
+    title="What Sets Us Apart"
+    columns={3}
     items={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
+        title: 'Licensed & Insured',
+        description: 'Full Idaho licensing and liability coverage on every job. Your home and our team are always protected.',
+        icon: 'tabler:certificate',
       },
       {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
+        title: 'Background-Checked Team',
+        description: 'Every team member is vetted and background-checked. You can feel safe having us in your home.',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
+        title: 'Local Knowledge',
+        description: "We know Boise homes, neighborhoods, and building codes. That local expertise saves you time and money.",
+        icon: 'tabler:map-pin',
       },
       {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        title: 'Transparent Pricing',
+        description: 'Detailed written estimates before work begins. What we quote is what you pay — no hidden fees.',
+        icon: 'tabler:receipt',
+      },
+      {
+        title: 'Satisfaction Guarantee',
+        description: "If you're not happy with the work, we come back and make it right. No arguments, no runaround.",
+        icon: 'tabler:thumb-up',
+      },
+      {
+        title: 'On-Time & Clean',
+        description: "We show up when we say we will and clean up when we're done. Your time and your home are respected.",
+        icon: 'tabler:clock',
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
+  <Steps2
+    title="What You Can Expect from Every Project"
+    callToAction={{ text: 'Get Started', href: '/get-estimate' }}
     items={[
       {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+        title: 'Clear communication from start to finish',
+        description: "We keep you informed at every stage — no guessing about timelines, costs, or what's happening next.",
       },
       {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
+        title: 'Detailed written estimates before work begins',
+        description: 'You know exactly what the job will cost before we pick up a tool. If anything changes, we discuss it with you first.',
       },
+      {
+        title: 'Professional crews who respect your home and your time',
+        description: 'Our team is trained, uniformed, and courteous. We protect your floors, move your furniture, and clean up after ourselves.',
+      },
+      {
+        title: 'Follow-up to ensure your complete satisfaction',
+        description: "After the job is done, we check in to make sure everything is perfect. Your satisfaction isn't just a goal — it's our guarantee.",
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Let's Talk About Your Home"
+    subtitle="Whether it's a small fix or a big project, we'd love to hear from you."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
     ]}
   />
 </Layout>
