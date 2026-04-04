@@ -5,19 +5,23 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact Us',
+  description:
+    "Get in touch with Boise Home Services. Call, email, or send us a message. Serving the Treasure Valley for all your home maintenance and repair needs.",
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText
+    tagline="Contact Us"
+    title="Let's Get in Touch"
+    subtitle="Have a question or ready to start a project? Reach out — we'd love to hear from you."
+  />
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="Send Us a Message"
+    subtitle="We typically respond within a few hours during business days."
     inputs={[
       {
         type: 'text',
@@ -29,50 +33,61 @@ const metadata = {
         name: 'email',
         label: 'Email',
       },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Phone',
+      },
+      {
+        type: 'text',
+        name: 'subject',
+        label: 'Subject',
+      },
     ]}
     textarea={{
-      label: 'Message',
+      label: 'Tell us about your project or question',
     }}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        "By submitting, you agree to our <a href='/privacy' class='underline'>privacy policy</a>.",
     }}
-    description="Our support team typically responds within 24 business hours."
+    button="Send Message"
+    description="Prefer to talk? Call us at **(208) XXX-XXXX**"
   />
 
-  <!-- Features2 Widget ************** -->
-
   <Features2
-    title="We are here to help!"
+    title="Other Ways to Reach Us"
+    columns={3}
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
         title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
+        description: '(208) XXX-XXXX<br/>Mon–Fri 7am–6pm, Sat 8am–2pm',
+        icon: 'tabler:phone',
       },
       {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'info@boisehome.services<br/>We respond within a few hours',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: 'Office Hours',
+        description: 'Mon–Fri: 7:00 AM – 6:00 PM<br/>Saturday: 8:00 AM – 2:00 PM',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Service Area',
+        description: 'Boise, Meridian, Eagle, Nampa, Caldwell, Star, Kuna',
         icon: 'tabler:map-pin',
+      },
+      {
+        title: 'AI Assistant',
+        description: 'Get instant answers about our services<br/>Available 24/7',
+        icon: 'tabler:message-chatbot',
+      },
+      {
+        title: 'Emergency Service',
+        description: 'Available for urgent repairs<br/>Call for same-day availability',
+        icon: 'tabler:urgent',
       },
     ]}
   />
