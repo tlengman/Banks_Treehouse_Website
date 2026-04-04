@@ -1,0 +1,150 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Get Your Free Estimate',
+  description:
+    'Request a free, no-obligation estimate for your home project. Boise Home Services provides detailed quotes within 24 hours. Serving the Treasure Valley.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Free Estimates"
+    title="Get Your Free, No-Obligation Estimate"
+    subtitle="Tell us about your project and we'll provide a detailed estimate — usually within 24 hours. No pressure, no hidden fees."
+  />
+
+  <ContactUs
+    id="estimate-form"
+    title="Project Details"
+    subtitle="The more details you provide, the more accurate your estimate will be."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Your Name *',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email Address *',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Phone Number *',
+      },
+      {
+        type: 'text',
+        name: 'address',
+        label: 'Project Address',
+        placeholder: 'Street address in the Treasure Valley',
+      },
+      {
+        type: 'text',
+        name: 'service',
+        label: 'Type of Service Needed',
+        placeholder: 'e.g., Plumbing, Painting, Handyman...',
+      },
+    ]}
+    textarea={{
+      label: 'Describe Your Project',
+      placeholder: 'Tell us what you need done, including any specific details about scope, timeline, or budget range...',
+    }}
+    disclaimer={{
+      label:
+        "By submitting, you agree to our <a href='/privacy' class='underline'>privacy policy</a>. We will only use your information to provide your estimate.",
+    }}
+    button="Request My Free Estimate"
+    description="Need it faster? Call **(208) XXX-XXXX** for an immediate consultation."
+  />
+
+  <Steps
+    tagline="Our Process"
+    title="After You Submit Your Request"
+    items={[
+      {
+        title: 'We Review Your Details',
+        description: 'Our team reviews your project description and prepares any clarifying questions we may have.',
+        icon: 'tabler:file-search',
+      },
+      {
+        title: 'We May Call to Clarify',
+        description: 'For complex projects, a quick call helps us give a more accurate estimate. Simple jobs may not need this step.',
+        icon: 'tabler:phone-outgoing',
+      },
+      {
+        title: 'You Receive Your Estimate',
+        description: 'A detailed, written estimate delivered to your email — usually within 24 hours of your request.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'You Decide — No Pressure',
+        description: 'Take your time. Our estimates are valid for 30 days with absolutely no obligation to proceed.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Professional reviewing project details and preparing an estimate',
+    }}
+  />
+
+  <Testimonials
+    tagline="What Customers Say"
+    title="Honest Estimates, Every Time"
+    testimonials={[
+      {
+        testimonial:
+          'Their estimate was detailed and honest — it broke down every line item so I knew exactly what I was paying for. When the final bill came, it matched the estimate to the penny. That kind of transparency is rare.',
+        name: 'Jennifer P.',
+        job: 'Boise',
+      },
+      {
+        testimonial:
+          "Got a quote within a few hours of submitting the form. Very responsive and professional. They even included photos of what they'd be fixing, which helped me understand the scope of work.",
+        name: 'Mike D.',
+        job: 'Meridian',
+      },
+      {
+        testimonial:
+          "They actually came in under the estimate. That never happens! The crew finished our bathroom tile job a half-day early and the final cost was less than quoted. We've already booked them for the kitchen.",
+        name: 'Karen S.',
+        job: 'Eagle',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Estimate FAQs"
+    columns={2}
+    items={[
+      {
+        title: 'How long until I get my estimate?',
+        description:
+          'Most estimates are delivered within 24 hours. Complex projects like remodels may take 2–3 days after an on-site visit to ensure accuracy.',
+      },
+      {
+        title: 'Is the estimate really free?',
+        description:
+          "Yes, completely free with no obligation. We believe you deserve to know the cost before committing. There's no pressure to move forward.",
+      },
+      {
+        title: 'What if my project changes after the estimate?',
+        description:
+          "No problem. We'll adjust the estimate to reflect the new scope and get your approval before any additional work begins.",
+      },
+      {
+        title: 'Do you offer financing?',
+        description:
+          'For larger projects, we can discuss payment plans and financing options. Ask about what\'s available when you receive your estimate.',
+      },
+    ]}
+  />
+</Layout>
