@@ -1,0 +1,44 @@
+{
+  "_comment": "DNS records baseline for prodevanalytics.com — zone 67f5858f6e96f803c24ed63ec69d498c",
+  "_updated": "2026-04-04",
+  "records": [
+    {
+      "type": "MX",
+      "name": "prodevanalytics.com",
+      "content": "route1.mx.cloudflare.net",
+      "priority": 41,
+      "ttl": 1,
+      "purpose": "Cloudflare Email Routing"
+    },
+    {
+      "type": "MX",
+      "name": "prodevanalytics.com",
+      "content": "route2.mx.cloudflare.net",
+      "priority": 3,
+      "ttl": 1,
+      "purpose": "Cloudflare Email Routing"
+    },
+    {
+      "type": "MX",
+      "name": "prodevanalytics.com",
+      "content": "route3.mx.cloudflare.net",
+      "priority": 27,
+      "ttl": 1,
+      "purpose": "Cloudflare Email Routing"
+    },
+    {
+      "type": "TXT",
+      "name": "prodevanalytics.com",
+      "content": "v=spf1 include:_spf.mx.cloudflare.net ~all",
+      "ttl": 1,
+      "purpose": "SPF for Cloudflare Email Routing"
+    },
+    {
+      "type": "TXT",
+      "name": "cf2024-1._domainkey.prodevanalytics.com",
+      "content": "(DKIM key — auto-managed by Cloudflare)",
+      "ttl": 1,
+      "purpose": "DKIM for Cloudflare Email Routing"
+    }
+  ]
+}

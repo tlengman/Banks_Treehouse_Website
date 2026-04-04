@@ -1,0 +1,30 @@
+{
+  "_comment": "Cloudflare Email Routing config for prodevanalytics.com",
+  "_updated": "2026-04-04",
+  "zone": "prodevanalytics.com",
+  "zone_id": "67f5858f6e96f803c24ed63ec69d498c",
+  "enabled": true,
+  "forwarding_rules": [
+    {
+      "source": "chema@prodevanalytics.com",
+      "destination": "cailletbois@icloud.com",
+      "enabled": true
+    },
+    {
+      "source": "sales@prodevanalytics.com",
+      "destination": "cailletbois@icloud.com",
+      "enabled": true
+    },
+    {
+      "source": "info@prodevanalytics.com",
+      "destination": "cailletbois@icloud.com",
+      "enabled": true
+    },
+    {
+      "source": "ihor@prodevanalytics.com",
+      "destination": "cailletbois@icloud.com",
+      "enabled": true
+    }
+  ],
+  "notes": "All DNS records, email routing enablement, and forwarding rules configured via Cloudflare API on 2026-04-04."
+}
