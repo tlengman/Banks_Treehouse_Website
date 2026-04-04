@@ -1,0 +1,207 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Painting Services in Boise',
+  description:
+    'Professional interior and exterior painting in Boise and the Treasure Valley. Cabinet refinishing, deck staining, color consultation. Clean work, lasting results.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Painting Services"
+    title="Transform Your Home with Professional Painting"
+    subtitle="Clean lines, quality materials, and attention to detail. Our painting crews deliver beautiful results — inside and out."
+    actions={[
+      { variant: 'primary', text: 'Get a Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Professional painter rolling fresh paint on a bright interior wall',
+    }}
+  />
+
+  <Features
+    tagline="What We Do"
+    title="Painting Services for Every Project"
+    columns={2}
+    items={[
+      {
+        title: 'Interior Painting',
+        description: 'Walls, ceilings, trim, and accent walls. We deliver smooth, even coverage with premium paint that lasts for years.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Exterior Painting',
+        description: 'Siding, trim, shutters, and front doors. We prep thoroughly and use weather-resistant paint that stands up to Idaho seasons.',
+        icon: 'tabler:home',
+      },
+      {
+        title: 'Cabinet Refinishing',
+        description: 'Kitchen, bathroom, and laundry cabinets. A fraction of the cost of replacement with dramatic results.',
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Deck & Fence Staining',
+        description: 'Staining, sealing, and weatherproofing to protect your outdoor wood from Idaho sun, rain, and snow.',
+        icon: 'tabler:fence',
+      },
+      {
+        title: 'Drywall Repair & Texture',
+        description: 'Patch, prime, and texture match before painting. We make sure your walls are smooth and ready for a flawless finish.',
+        icon: 'tabler:wall',
+      },
+      {
+        title: 'Color Consultation',
+        description: 'Not sure what color? Our team helps you choose palettes that complement your home, lighting, and personal style.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Trim & Accent Painting',
+        description: 'Crown molding, baseboards, chair rail, and wainscoting. Crisp, clean lines that make architectural details pop.',
+        icon: 'tabler:brush',
+      },
+      {
+        title: 'Popcorn Ceiling Removal',
+        description: 'Scrape, smooth, prime, and paint. Modernize your ceilings and give your rooms a clean, contemporary look.',
+        icon: 'tabler:arrows-minimize',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="What to Expect"
+    title="Professional Prep, Premium Results"
+    items={[
+      { title: 'Detailed prep — tape, drop cloths, furniture protection' },
+      { title: 'Premium paints from Sherwin-Williams and Benjamin Moore' },
+      { title: 'Clean edges and even coverage throughout' },
+      { title: 'Thorough cleanup — you won\'t know we were there' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Professional painting supplies and preparation for interior painting',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Difference Is in the Details</h3>
+      Great painting starts with great prep. We fill holes, sand surfaces, tape edges, and protect your floors and furniture before a single brush stroke. We use premium paints that provide superior coverage and durability. The result is a finish that looks better and lasts longer.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    tagline="Why Go Pro"
+    title="Why Professional Painting Matters"
+    items={[
+      { title: 'Avoid DIY pitfalls — drips, uneven coverage, wrong prep' },
+      { title: 'Idaho UV exposure degrades cheap exterior paint quickly' },
+      { title: 'Temperature swings in Boise require flexible, quality paint' },
+      { title: 'Professional painting adds measurable value to your home' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Beautifully painted home exterior with fresh, clean finish',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">More Than Just Paint</h3>
+      A professional paint job doesn't just look better — it protects your home. Idaho's climate, with intense summer sun and freezing winters, demands paint products that expand and contract with temperature swings. We select the right product for every surface and exposure, so your investment lasts.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    tagline="How It Works"
+    title="Our Painting Process"
+    items={[
+      {
+        title: 'Consultation & Color Selection',
+        description: 'We visit your home, discuss your vision, and help you choose the perfect colors and finishes for each room or surface.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Detailed Quote',
+        description: 'We measure, calculate materials, and provide a written estimate that covers everything — prep, paint, labor, and cleanup.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Schedule',
+        description: 'We coordinate the project around your schedule and weather conditions (for exterior work) to ensure the best results.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Prep & Paint',
+        description: 'Our crew preps thoroughly, applies paint with precision, and inspects the work to ensure flawless coverage and clean lines.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Walkthrough & Cleanup',
+        description: 'We do a final walkthrough with you, touch up any spots, and leave your home spotless. Your furniture goes right back where it was.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Painter carefully applying trim paint with precision',
+    }}
+  />
+
+  <FAQs
+    title="Painting FAQs"
+    columns={2}
+    items={[
+      {
+        title: 'How much does it cost to paint a room?',
+        description:
+          'A standard bedroom typically costs $300–$600 for walls and ceiling. Larger rooms, accent walls, and trim work adjust the price. We provide a free, detailed estimate.',
+      },
+      {
+        title: 'How long does an interior painting project take?',
+        description:
+          'Most single rooms take 1 day. A full interior (3–4 bedrooms, living areas, hallways) typically takes 3–5 days depending on prep work and number of coats needed.',
+      },
+      {
+        title: 'What paint brands do you use?',
+        description:
+          'We primarily use Sherwin-Williams and Benjamin Moore — both offer excellent coverage, durability, and color accuracy. We can also work with other premium brands on request.',
+      },
+      {
+        title: 'Do you move furniture?',
+        description:
+          'Yes. We move furniture to the center of the room and cover it with drop cloths. For large or fragile items, we may ask that they be moved in advance.',
+      },
+      {
+        title: 'How should I prepare for painters?',
+        description:
+          'Clear small items from surfaces (shelves, counters near walls). We handle furniture, drop cloths, taping, and all prep. Just give us access and we take care of the rest.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Ready for a Fresh Look?"
+    subtitle="Professional painting that transforms your home. Free estimates, expert color advice, and results you'll love."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+  />
+</Layout>

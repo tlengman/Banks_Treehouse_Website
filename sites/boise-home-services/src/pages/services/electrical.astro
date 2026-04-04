@@ -1,0 +1,207 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Electrical Services in Boise',
+  description:
+    'Licensed electricians in Boise and the Treasure Valley. Outlets, lighting, ceiling fans, panel upgrades, and smart home wiring. Safe, code-compliant work.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Electrical Services"
+    title="Safe, Professional Electrical Work in Boise"
+    subtitle="Our licensed electricians handle everything from simple outlet installs to full panel upgrades — safely, correctly, and up to code."
+    actions={[
+      { variant: 'primary', text: 'Get a Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Licensed electrician installing a light fixture in a residential home',
+    }}
+  />
+
+  <Features
+    tagline="What We Do"
+    title="Electrical Services for Every Need"
+    columns={2}
+    items={[
+      {
+        title: 'Outlet & Switch Installation',
+        description: 'New outlets, GFCI upgrades, USB outlets, and dimmer switches. We bring your home up to modern standards safely.',
+        icon: 'tabler:plug',
+      },
+      {
+        title: 'Lighting Installation',
+        description: 'Recessed, pendant, under-cabinet, and landscape lighting. We design and install lighting that transforms your space.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Ceiling Fan Installation',
+        description: 'New installs, replacements, and remote control upgrades. Stay cool in the Boise summer with properly wired and balanced fans.',
+        icon: 'tabler:propeller',
+      },
+      {
+        title: 'Panel Upgrades',
+        description: '100A to 200A upgrades, breaker replacements, and code compliance work. Support modern electrical demands safely.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Circuit Troubleshooting',
+        description: 'Tripping breakers, dead outlets, and flickering lights. We diagnose and fix the root cause — not just the symptom.',
+        icon: 'tabler:activity',
+      },
+      {
+        title: 'Smoke & CO Detector Installation',
+        description: 'Hardwired, interconnected units placed to Idaho code requirements. Protect your family with properly installed detectors.',
+        icon: 'tabler:bell-ringing',
+      },
+      {
+        title: 'Outdoor Lighting',
+        description: 'Security, landscape, pathway, and deck/patio lighting. Extend your outdoor living space and improve safety after dark.',
+        icon: 'tabler:sun',
+      },
+      {
+        title: 'Smart Home Wiring',
+        description: 'Thermostat, doorbell, switch, and hub wiring. We set up the electrical backbone for your smart home upgrades.',
+        icon: 'tabler:smart-home',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="What to Expect"
+    title="Licensed, Insured, Code-Compliant"
+    items={[
+      { title: 'Licensed and insured electricians' },
+      { title: 'Permits pulled when required by Ada County' },
+      { title: 'Code-compliant work on every job' },
+      { title: 'Clean installation with no visible wiring messes' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Electrician working on residential wiring with professional tools',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Electrical Work You Can Trust</h3>
+      Electrical work isn't the place to cut corners. Our licensed electricians follow NEC and Idaho-specific codes on every job, pull permits when required, and leave your home safer than we found it. Every connection is tested before we call it done.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    tagline="Local Expertise"
+    title="Idaho-Specific Electrical Considerations"
+    items={[
+      { title: 'Older Boise homes may have outdated wiring (knob-and-tube, aluminum)' },
+      { title: 'Ada County permit requirements for panel and circuit work' },
+      { title: 'Surge protection for Idaho thunderstorms' },
+      { title: 'EV charger pre-wiring for your garage' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Modern home electrical panel upgrade',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">We Know Boise Homes</h3>
+      Many Treasure Valley homes — especially in the North End, Bench, and older Meridian neighborhoods — were built with electrical systems that can't handle today's demands. We evaluate your existing wiring, recommend upgrades where needed, and future-proof your home for EV chargers and smart technology.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    tagline="How It Works"
+    title="Our Electrical Process"
+    items={[
+      {
+        title: 'Consultation',
+        description: 'Describe what you need — new outlets, lighting, panel work, or troubleshooting. We ask the right questions to scope the job.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Quote & Permits',
+        description: 'We provide a written estimate and handle permit applications when required. No surprises on cost or timeline.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Schedule',
+        description: 'Pick a date that works. We coordinate around your schedule and minimize disruption to your daily routine.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Complete',
+        description: 'Our electricians do the work cleanly, test every connection, and walk you through what was done.',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'Follow Up',
+        description: 'We verify everything is working and that you are completely satisfied. Warranty coverage gives you long-term peace of mind.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Electrician reviewing plans for a residential project',
+    }}
+  />
+
+  <FAQs
+    title="Electrical FAQs"
+    columns={2}
+    items={[
+      {
+        title: 'How much do common electrical jobs cost?',
+        description:
+          'Outlet installation typically runs $150–$300, ceiling fan installs $200–$400, and panel upgrades $1,500–$3,500. We provide a detailed written estimate for your specific project.',
+      },
+      {
+        title: 'When are permits required?',
+        description:
+          'In Ada County, permits are generally required for new circuits, panel work, and major wiring changes. We handle the permit process and ensure inspection approval.',
+      },
+      {
+        title: 'How do I know if my wiring is outdated?',
+        description:
+          'Signs include frequent breaker trips, two-prong outlets, warm outlet covers, flickering lights, or a home built before 1970. We offer electrical safety inspections to evaluate your system.',
+      },
+      {
+        title: 'Can you install an EV charger?',
+        description:
+          'Yes. We install Level 2 (240V) EV chargers in garages and driveways. This includes running a dedicated circuit from your panel and mounting the charging unit.',
+      },
+      {
+        title: 'Do you offer emergency electrical service?',
+        description:
+          'Yes. For safety hazards like sparking outlets, burning smells, or complete power loss, we offer priority same-day service. Call us immediately for electrical emergencies.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Need an Electrician in Boise?"
+    subtitle="Safe, code-compliant electrical work from licensed professionals. Free estimates, honest pricing."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+  />
+</Layout>
