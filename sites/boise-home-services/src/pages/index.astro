@@ -1,102 +1,103 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Boise Home Services | Trusted Home Repair & Maintenance in the Treasure Valley',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero2 Widget ******************* -->
 
-  <Hero
+  <Hero2
+    tagline="Trusted Home Services in the Treasure Valley"
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Get a Free Estimate',
+        href: '/get-estimate',
+        icon: 'tabler:clipboard-check',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Our Services', href: '/services' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Beautiful craftsman home exterior in the Pacific Northwest',
+    }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
+      Your Home Deserves <span class="text-accent highlight">Expert Care</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      Professional maintenance, repair, and improvement services for homeowners across Boise, Meridian, Eagle, and the
+      Treasure Valley. Licensed, insured, and committed to quality.
     </Fragment>
-  </Hero>
+  </Hero2>
 
   <!-- Note Widget ******************* -->
 
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+  <Note
+    icon="tabler:info-square"
+    title="Serving Boise, Meridian, Eagle, Nampa, Caldwell, Star & Kuna."
+    description="Licensed & Insured."
+  />
 
   <!-- Features Widget *************** -->
 
   <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    id="services"
+    tagline="What We Do"
+    title="Comprehensive Home Services"
+    subtitle="From quick fixes to full remodels, we handle it all so you can enjoy your home."
+    columns={2}
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Handyman Services',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'General repairs, furniture assembly, drywall patching, and everything in between. No job is too small for our experienced team.',
+        icon: 'tabler:tool',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Plumbing',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'Leak repair, fixture installation, water heaters, and drain cleaning. We keep your water flowing and your home dry.',
+        icon: 'tabler:droplet',
       },
       {
-        title: 'Best Practices',
+        title: 'Electrical',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'Outlet installation, lighting, ceiling fans, and panel upgrades. Safe, code-compliant electrical work you can trust.',
+        icon: 'tabler:bolt',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Painting',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          'Interior and exterior painting, cabinet refinishing, and deck staining. Transform your space with a fresh, professional finish.',
+        icon: 'tabler:paint',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Remodeling',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'Kitchen and bathroom remodels, flooring, tile work, and custom projects. Bring your vision to life with expert craftsmanship.',
+        icon: 'tabler:home-cog',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Seasonal Maintenance',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'Winterization, spring inspections, gutter cleaning, and weatherproofing. Protect your home year-round with proactive care.',
+        icon: 'tabler:snowflake',
       },
     ]}
   />
@@ -105,109 +106,25 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Why Choose Us"
+    title="Why Treasure Valley Homeowners Trust Us"
     items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
+      { title: 'Licensed & Insured' },
+      { title: 'Transparent Pricing' },
+      { title: 'Local Experts Who Know Boise' },
+      { title: 'Satisfaction Guaranteed on Every Job' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      alt: 'Homeowner and contractor shaking hands after completed project',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Built on Trust, Not Advertising</h3>
+      We're a locally owned company that grew through word-of-mouth referrals from satisfied neighbors. We believe in honest
+      assessments, fair pricing, and doing the job right the first time. When you call us, you're getting a team that treats
+      your home like their own.
     </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -217,148 +134,64 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    id="how-it-works"
+    tagline="Simple Process"
+    title="Getting Started Is Easy"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Tell Us About Your Project',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
+          'Describe what you need done through our online form, chat, or give us a call. We respond to every inquiry within 24 hours.',
+        icon: 'tabler:message-circle',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Get Your Free Estimate',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
+          "We'll review your project and provide a detailed, no-obligation estimate. No hidden fees, no surprises — just honest numbers.",
+        icon: 'tabler:file-invoice',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'We Do the Work',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
+          'Our skilled team completes the job on time, on budget, and with care for your home. We clean up after ourselves, too.',
+        icon: 'tabler:hammer',
       },
       {
-        title: 'Ready!',
-        icon: 'tabler:check',
+        title: 'Enjoy Your Home',
+        description:
+          'We follow up to make sure everything is perfect. Your satisfaction is guaranteed — if something isn\'t right, we\'ll fix it.',
+        icon: 'tabler:home-check',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Contractor reviewing renovation plans with homeowner',
     }}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Testimonials Widget ************ -->
 
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
+  <Testimonials
+    tagline="Reviews"
+    title="What Our Neighbors Say"
+    testimonials={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        testimonial:
+          'Had a kitchen faucet that had been leaking for weeks. They came out the next day, diagnosed the problem in minutes, and had it replaced within the hour. Fair price, clean work, and they even noticed a slow drain under the sink and fixed that too. Highly recommend.',
+        name: 'Sarah M.',
+        job: 'North End, Boise',
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        testimonial:
+          'We hired them to paint our entire main floor — living room, kitchen, and hallway. The crew was professional, gave us great advice on colors, and finished a day ahead of schedule. The attention to detail around our trim and ceiling lines was impressive. Will definitely use again.',
+        name: 'David & Lisa R.',
+        job: 'Meridian',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        testimonial:
+          "Signed up for their seasonal maintenance package last fall. They did a thorough inspection and caught a couple of issues with our weatherstripping and gutters that I never would have noticed. Saved us from what could have been an expensive repair this winter. Worth every penny.",
+        name: 'Tom K.',
+        job: 'Eagle',
       },
     ]}
   />
@@ -367,10 +200,39 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Homes Served', amount: '500+' },
+      { title: 'Years Experience', amount: '15+' },
+      { title: 'Google Rating', amount: '4.9' },
+      { title: 'Satisfaction Guaranteed', amount: '100%' },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    columns={2}
+    items={[
+      {
+        title: 'How much do your services cost?',
+        description:
+          "We provide free, detailed estimates for every project. Costs vary based on scope and materials, but we're always transparent — no hidden fees.",
+      },
+      {
+        title: 'What areas do you serve?',
+        description:
+          'We serve the entire Treasure Valley including Boise, Meridian, Eagle, Nampa, Caldwell, Star, and Kuna.',
+      },
+      {
+        title: 'How quickly can you start?',
+        description:
+          'For most projects, we can schedule within 1–2 weeks. Emergency repairs are available with faster turnaround.',
+      },
+      {
+        title: 'Are you licensed and insured?',
+        description:
+          "Yes. We are fully licensed and insured in the state of Idaho. We're happy to provide documentation upon request.",
+      },
     ]}
   />
 
@@ -380,20 +242,21 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Get Free Estimate',
+        href: '/get-estimate',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        text: 'Call (208) XXX-XXXX',
+        href: 'tel:+1208XXXXXXX',
+        icon: 'tabler:phone',
       },
     ]}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+    <Fragment slot="title">Ready to Get Started?</Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Tell us about your project and get a free, no-obligation estimate within 24 hours.
     </Fragment>
   </CallToAction>
 </Layout>
