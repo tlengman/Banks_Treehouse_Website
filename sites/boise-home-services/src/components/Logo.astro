@@ -1,9 +1,10 @@
 ---
-import { SITE } from 'astrowind:config';
+import { Icon } from 'astro-icon/components';
 ---
 
 <span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold whitespace-nowrap flex items-center gap-1"
 >
-  🚀 {SITE?.name}
+  <Icon name="tabler:home" class="w-6 h-6 text-[#1a5276]" />
+  <span class="text-[#1a5276]">Boise</span><span class="text-[#f39c12]">Home</span><span class="text-gray-900 dark:text-white">Services</span>
 </span>
