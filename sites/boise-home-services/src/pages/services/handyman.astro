@@ -1,0 +1,221 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Handyman Services in Boise',
+  description:
+    "Professional handyman services in Boise and the Treasure Valley. Furniture assembly, drywall repair, door and window fixes, and more. Licensed & insured.",
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Handyman Services"
+    title="Your Go-To Handyman in Boise"
+    subtitle="From small fixes to big to-do lists, our skilled handymen handle it all — quickly, professionally, and at a fair price."
+    actions={[
+      { variant: 'primary', text: 'Get a Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Professional handyman working on home repair project',
+    }}
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    tagline="What We Do"
+    title="Handyman Services for Every Job"
+    columns={2}
+    items={[
+      {
+        title: 'Furniture Assembly',
+        description: 'Desks, shelving units, beds, outdoor furniture — we assemble it correctly so you can skip the frustration and missing screws.',
+        icon: 'tabler:armchair',
+      },
+      {
+        title: 'Drywall Repair',
+        description: 'Patches, holes, water damage, and texture matching. We make your walls look like the damage never happened.',
+        icon: 'tabler:wall',
+      },
+      {
+        title: 'Door & Window Repair',
+        description: 'Sticking doors, broken locks, weatherstripping, and hardware replacement. We restore smooth operation and proper seals.',
+        icon: 'tabler:door',
+      },
+      {
+        title: 'Shelving & Mounting',
+        description: 'TV mounting, floating shelves, curtain rods, and art hanging. Secure, level, and exactly where you want them.',
+        icon: 'tabler:layout-board',
+      },
+      {
+        title: 'Caulking & Weatherproofing',
+        description: 'Bathroom caulking, window sealing, and draft elimination. Keep moisture out and conditioned air in.',
+        icon: 'tabler:droplet-off',
+      },
+      {
+        title: 'Gutter Cleaning',
+        description: 'Debris removal, downspout clearing, and gutter guard installation. Protect your home from water damage.',
+        icon: 'tabler:filter',
+      },
+      {
+        title: 'Fence Repair',
+        description: 'Broken boards, leaning posts, and gate hardware. We restore your fence to keep your yard looking great.',
+        icon: 'tabler:fence',
+      },
+      {
+        title: 'General Repairs',
+        description: "If it's broken, we can probably fix it. From squeaky floors to sticky drawers, no repair is too small for our team.",
+        icon: 'tabler:tool',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="What to Expect"
+    title="Professional Service, Every Time"
+    items={[
+      { title: 'Same-day or next-day scheduling for small jobs' },
+      { title: 'Upfront pricing before work begins' },
+      { title: 'Clean jobsite when we leave' },
+      { title: 'Licensed professionals — not a random guy with a toolbox' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Professional handyman measuring and preparing for repair work',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Dependable & Detail-Oriented</h3>
+      When you book with Boise Home Services, you get a trained professional who shows up on time, explains the work before starting, and doesn't leave until the job is done right. We treat your home with the same care we'd give our own.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    tagline="When to Call Us"
+    title="Sound Familiar?"
+    items={[
+      { title: 'Your to-do list has more than 3 items' },
+      { title: "You don't own the right tools" },
+      { title: 'The job requires two people' },
+      { title: "You'd rather spend your weekend relaxing" },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Homeowner relaxing while professional handles repairs',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Stop Putting It Off</h3>
+      We all have that list of things around the house that need fixing. Maybe you started a project that didn't go as planned, or you've been meaning to hang those shelves for months. That's exactly what we're here for. Hand us the list and take your weekend back.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    tagline="How It Works"
+    title="Our Process"
+    items={[
+      {
+        title: 'Consultation',
+        description: 'Tell us what you need — call, email, or fill out our online form. Describe the job and we\'ll take it from there.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Quote',
+        description: 'We provide a clear, written estimate before any work begins. No surprises, no hidden fees.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Schedule',
+        description: 'Pick a time that works for you. We offer flexible scheduling including weekday and weekend availability.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Complete',
+        description: 'Our handyman arrives on time, does the work to your satisfaction, and cleans up before leaving.',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'Follow Up',
+        description: 'We check in to make sure everything is perfect. If anything needs attention, we come back — no questions asked.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Handyman reviewing project details with homeowner',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Handyman FAQs"
+    columns={2}
+    items={[
+      {
+        title: 'Is there a minimum job size or cost?',
+        description:
+          "We have a one-hour minimum for handyman visits, but most customers have multiple items on their list. We'll work through as many as we can during the visit.",
+      },
+      {
+        title: 'How does pricing work — hourly or flat rate?',
+        description:
+          'It depends on the job. Simple tasks like mounting a TV are flat rate. Larger or variable jobs are quoted hourly. Either way, you\'ll know the price before we start.',
+      },
+      {
+        title: 'What if you find additional issues during the job?',
+        description:
+          "We'll let you know what we found and give you an updated estimate. We never do additional work without your approval first.",
+      },
+      {
+        title: 'Do you bring your own materials?',
+        description:
+          'We carry common supplies (screws, anchors, caulk, etc.) in our trucks. For specific materials like fixtures or hardware, we can pick them up for you or you can have them ready.',
+      },
+      {
+        title: 'How should I prepare for the visit?',
+        description:
+          "Just make sure we can access the work area. If you have specific materials or parts you'd like us to use, have them available. Otherwise, we handle everything.",
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to Check Off That To-Do List?"
+    subtitle="Tell us what needs fixing and we'll take care of the rest. Free estimates, no obligation."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+  />
+</Layout>

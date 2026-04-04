@@ -1,0 +1,221 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Plumbing Services in Boise',
+  description:
+    "Licensed plumbing services in Boise and the Treasure Valley. Leak repair, water heaters, drain cleaning, fixture installation. Fast, reliable, fair pricing.",
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Plumbing Services"
+    title="Reliable Plumbing for Your Boise Home"
+    subtitle="From dripping faucets to water heater replacements, our licensed plumbers diagnose fast and fix it right the first time."
+    actions={[
+      { variant: 'primary', text: 'Get a Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Licensed plumber repairing pipes under a kitchen sink',
+    }}
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    tagline="What We Do"
+    title="Plumbing Services for Every Need"
+    columns={2}
+    items={[
+      {
+        title: 'Leak Repair',
+        description: 'Pipe leaks, faucet drips, and running toilets. We find the source fast and fix it before it causes water damage.',
+        icon: 'tabler:droplet-filled',
+      },
+      {
+        title: 'Faucet & Fixture Installation',
+        description: 'Kitchen, bathroom, and utility sink fixtures installed correctly. We handle the plumbing so everything connects and flows perfectly.',
+        icon: 'tabler:bath',
+      },
+      {
+        title: 'Water Heater Service',
+        description: 'Installation, repair, and tankless conversion. We help you choose the right system for your home and budget.',
+        icon: 'tabler:flame',
+      },
+      {
+        title: 'Drain Cleaning',
+        description: 'Slow drains, stubborn clogs, and main line clearing. We use professional equipment to restore full flow without damaging your pipes.',
+        icon: 'tabler:ripple',
+      },
+      {
+        title: 'Toilet Repair & Replacement',
+        description: 'Running, leaking, or ready for an upgrade. We repair what we can and replace what we can\'t — quickly and cleanly.',
+        icon: 'tabler:badge-wc',
+      },
+      {
+        title: 'Garbage Disposal',
+        description: 'Installation, repair, and replacement of garbage disposals. We ensure proper wiring, mounting, and drain connections.',
+        icon: 'tabler:trash',
+      },
+      {
+        title: 'Pipe Insulation',
+        description: "Freeze protection for Idaho winters. We insulate exposed pipes in crawl spaces, garages, and exterior walls to prevent costly burst pipes.",
+        icon: 'tabler:temperature-minus',
+      },
+      {
+        title: 'Sump Pump Maintenance',
+        description: 'Testing, replacement, and backup systems. Keep your basement dry and your pump ready for when you need it most.',
+        icon: 'tabler:arrows-down',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="What to Expect"
+    title="Licensed, Honest, and On Time"
+    items={[
+      { title: 'Licensed plumbers with years of experience' },
+      { title: 'Upfront diagnosis and clear explanation of the problem' },
+      { title: 'Warranty on parts and labor' },
+      { title: 'Idaho code-compliant work on every job' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Professional plumber inspecting and diagnosing a plumbing issue',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Plumbing Done Right</h3>
+      Our licensed plumbers arrive on time, diagnose the problem accurately, and explain your options before touching a wrench. We stand behind every repair with a warranty and always work to Idaho plumbing code.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    tagline="Local Expertise"
+    title="Common Boise Plumbing Issues We Fix"
+    items={[
+      { title: 'Hard water buildup and mineral deposits' },
+      { title: 'Frozen and burst pipes during Idaho winters' },
+      { title: 'Aging pipe systems in older Boise neighborhoods' },
+      { title: 'Sprinkler and irrigation line connections' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Boise Idaho home in winter with snow on the ground',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">We Know Boise Plumbing</h3>
+      Treasure Valley homes face unique plumbing challenges — hard water from the Boise River aquifer, freeze risk from November through March, and aging galvanized pipes in the North End and Bench neighborhoods. We've seen it all and know how to fix it efficiently.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    tagline="How It Works"
+    title="Our Plumbing Process"
+    items={[
+      {
+        title: 'Consultation',
+        description: 'Describe the issue — leaks, clogs, installations, or emergencies. We\'ll ask the right questions to understand the scope.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Diagnosis & Quote',
+        description: 'Our plumber inspects the problem, explains what\'s going on in plain English, and provides a written estimate before starting.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Schedule',
+        description: 'We work around your schedule. For emergencies, we offer priority same-day service to minimize damage.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Repair',
+        description: 'Licensed, code-compliant work using quality materials. We test everything before we leave to make sure it\'s working perfectly.',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'Follow Up',
+        description: 'We check in to ensure the fix is holding and you\'re satisfied. Warranty coverage gives you peace of mind.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581141849291-1125c7b692b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Plumber reviewing repair plan with homeowner',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Plumbing FAQs"
+    columns={2}
+    items={[
+      {
+        title: 'Do you offer emergency plumbing service?',
+        description:
+          'Yes. For active leaks, burst pipes, or sewer backups, we offer priority same-day service. Call us and we\'ll get someone to you as quickly as possible.',
+      },
+      {
+        title: 'How much do common plumbing repairs cost?',
+        description:
+          'A faucet replacement typically runs $150–$350, toilet repairs $100–$250, and drain cleaning $125–$300. We always provide a written estimate before starting work.',
+      },
+      {
+        title: 'Do you handle plumbing for remodels?',
+        description:
+          'Absolutely. We do rough-in plumbing for kitchen and bathroom remodels, including rerouting supply lines and drain connections to match new layouts.',
+      },
+      {
+        title: 'How long does a water heater last?',
+        description:
+          'Traditional tank water heaters last 8–12 years, tankless units 15–20 years. If yours is approaching that age, we can inspect it and advise on repair vs. replacement.',
+      },
+      {
+        title: 'Can you help with hard water?',
+        description:
+          'Yes. Boise has notably hard water. We install and service water softeners and can address mineral buildup in pipes, fixtures, and appliances.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Need a Plumber in Boise?"
+    subtitle="From simple fixes to full plumbing overhauls, we've got you covered. Free estimates, honest pricing."
+    actions={[
+      { variant: 'primary', text: 'Get Free Estimate', href: '/get-estimate', icon: 'tabler:clipboard-check' },
+      { text: 'Call (208) XXX-XXXX', href: 'tel:+1208XXXXXXX', icon: 'tabler:phone' },
+    ]}
+  />
+</Layout>
