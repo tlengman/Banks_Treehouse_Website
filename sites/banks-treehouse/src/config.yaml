@@ -1,0 +1,66 @@
+site:
+  name: Banks Treehouse
+  site: 'https://bankstreehouse.com'
+  base: '/'
+  trailingSlash: false
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Banks Treehouse
+    template: '%s — Banks Treehouse'
+  description: "A hand-crafted TinyHome Treehouse nestled in 8 acres of Ponderosa pine forest in Banks, Idaho. Your whimsical escape into the Idaho pines."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Banks Treehouse
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 6
+
+    post:
+      isEnabled: false
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: false
+      pathname: 'blog'
+      robots:
+        index: true
+
+    category:
+      isEnabled: false
+      pathname: 'category'
+      robots:
+        index: true
+
+    tag:
+      isEnabled: false
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: false
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'light:only'
