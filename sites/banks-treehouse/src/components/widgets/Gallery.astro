@@ -1,0 +1,193 @@
+---
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  category: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  images: GalleryImage[];
+  categories?: string[];
+}
+
+const { title, subtitle, tagline, images, categories = [] } = Astro.props;
+
+const uniqueCategories = categories.length > 0
+  ? categories
+  : [...new Set(images.map((img) => img.category))];
+---
+
+<section class="py-12 md:py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    {(title || subtitle || tagline) && (
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        {tagline && <p class="text-base text-secondary font-bold tracking-wide uppercase">{tagline}</p>}
+        {title && <h2 class="text-4xl md:text-5xl font-bold font-heading leading-tight mt-2">{title}</h2>}
+        {subtitle && <p class="text-xl text-muted mt-4">{subtitle}</p>}
+      </div>
+    )}
+
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8" id="gallery-tabs">
+      <button
+        class="gallery-tab px-4 py-2 rounded-full text-sm font-semibold transition-colors bg-primary text-white"
+        data-category="all"
+      >
+        All
+      </button>
+      {uniqueCategories.map((cat) => (
+        <button
+          class="gallery-tab px-4 py-2 rounded-full text-sm font-semibold transition-colors bg-gray-200 text-gray-700 hover:bg-primary hover:text-white"
+          data-category={cat}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
+      {images.map((image, index) => (
+        <div
+          class="gallery-item group relative overflow-hidden rounded-xl cursor-pointer aspect-[4/3]"
+          data-category={image.category}
+          data-index={index}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-end">
+            <span class="text-white text-sm font-medium p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              {image.alt}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center"
+  >
+    <button
+      id="lightbox-close"
+      class="absolute top-4 right-4 text-white text-4xl leading-none hover:text-gray-300 z-10"
+      aria-label="Close lightbox"
+    >
+      &times;
+    </button>
+    <button
+      id="lightbox-prev"
+      class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl leading-none hover:text-gray-300 z-10"
+      aria-label="Previous image"
+    >
+      &#8249;
+    </button>
+    <button
+      id="lightbox-next"
+      class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl leading-none hover:text-gray-300 z-10"
+      aria-label="Next image"
+    >
+      &#8250;
+    </button>
+    <img
+      id="lightbox-img"
+      class="max-h-[85vh] max-w-[90vw] object-contain"
+      src=""
+      alt=""
+    />
+    <p id="lightbox-caption" class="absolute bottom-6 left-0 right-0 text-center text-white text-sm"></p>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.gallery-tab');
+    const items = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    let visibleItems = [...items];
+    let currentIndex = 0;
+
+    // Tab filtering
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const category = tab.dataset.category;
+        tabs.forEach((t) => {
+          t.classList.remove('bg-primary', 'text-white');
+          t.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        tab.classList.remove('bg-gray-200', 'text-gray-700');
+        tab.classList.add('bg-primary', 'text-white');
+
+        items.forEach((item) => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        visibleItems = [...items].filter((i) => i.style.display !== 'none');
+      });
+    });
+
+    // Lightbox open
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        currentIndex = visibleItems.indexOf(item);
+        showLightbox(img.src, img.alt);
+      });
+    });
+
+    function showLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightboxCaption.textContent = alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.getElementById('lightbox-prev').addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      const img = visibleItems[currentIndex].querySelector('img');
+      showLightbox(img.src, img.alt);
+    });
+
+    document.getElementById('lightbox-next').addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % visibleItems.length;
+      const img = visibleItems[currentIndex].querySelector('img');
+      showLightbox(img.src, img.alt);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') document.getElementById('lightbox-prev').click();
+      if (e.key === 'ArrowRight') document.getElementById('lightbox-next').click();
+    });
+  });
+</script>

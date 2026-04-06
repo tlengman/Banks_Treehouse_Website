@@ -1,0 +1,135 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Gallery from '~/components/widgets/Gallery.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Gallery',
+  description: 'Explore photos of Banks Treehouse — a hand-crafted TinyHome Treehouse in Banks, Idaho. See the interior, exterior, hot tub, fire pit, lookout treehouse, and surrounding pine forest.',
+};
+
+const galleryImages = [
+  // Exterior
+  {
+    src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80',
+    alt: 'Treehouse exterior surrounded by towering pine trees',
+    category: 'Exterior',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800&q=80',
+    alt: 'Hand-crafted wooden cabin nestled in the forest',
+    category: 'Exterior',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=800&q=80',
+    alt: 'Cabin entrance with rustic wood details',
+    category: 'Exterior',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800&q=80',
+    alt: 'Forest path leading to the treehouse',
+    category: 'Exterior',
+  },
+  // Interior
+  {
+    src: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80',
+    alt: 'Cozy treehouse interior with warm wood finishes',
+    category: 'Interior',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
+    alt: 'Queen bedroom with forest views — 30ft above the ground',
+    category: 'Interior',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
+    alt: 'Fully equipped kitchen with rustic charm',
+    category: 'Interior',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&q=80',
+    alt: 'Living area with hand-crafted wood details',
+    category: 'Interior',
+  },
+  // Hot Tub & Fire Pit
+  {
+    src: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=80',
+    alt: 'Hot tub surrounded by Ponderosa pines under the stars',
+    category: 'Hot Tub & Fire Pit',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?w=800&q=80',
+    alt: 'Fire pit area for evening gatherings in the forest',
+    category: 'Hot Tub & Fire Pit',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=800&q=80',
+    alt: 'Starry night sky above the outdoor relaxation area',
+    category: 'Hot Tub & Fire Pit',
+  },
+  // Views & Nature
+  {
+    src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80',
+    alt: 'Ponderosa pine forest on the 8-acre property',
+    category: 'Views & Nature',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80',
+    alt: 'Sunlight filtering through towering pine trees',
+    category: 'Views & Nature',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+    alt: 'Mountain views from the Banks, Idaho property',
+    category: 'Views & Nature',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=800&q=80',
+    alt: 'Morning mist through the pine forest',
+    category: 'Views & Nature',
+  },
+  // Lookout Treehouse
+  {
+    src: 'https://images.unsplash.com/photo-1488197047962-b48492f0ba53?w=800&q=80',
+    alt: 'Lookout treehouse perch among the treetops',
+    category: 'Lookout Treehouse',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=800&q=80',
+    alt: 'Panoramic forest views from the lookout platform',
+    category: 'Lookout Treehouse',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
+    alt: 'Sunset seen from the elevated lookout point',
+    category: 'Lookout Treehouse',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <Gallery
+    tagline="Photo Gallery"
+    title="Explore Banks Treehouse"
+    subtitle="Browse photos of the hand-crafted treehouse, surrounding forest, and all the experiences that await you."
+    images={galleryImages}
+    categories={['Exterior', 'Interior', 'Hot Tub & Fire Pit', 'Views & Nature', 'Lookout Treehouse']}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book on Airbnb',
+        href: 'https://www.airbnb.com/rooms/1110989650136663921',
+        target: '_blank',
+        icon: 'tabler:brand-airbnb',
+      },
+    ]}
+  >
+    <Fragment slot="title">Like What You See?</Fragment>
+    <Fragment slot="subtitle">
+      Book your stay and see it all in person. Photos don't do it justice.
+    </Fragment>
+  </CallToAction>
+</Layout>
