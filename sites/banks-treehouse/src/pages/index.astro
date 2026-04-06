@@ -11,6 +11,10 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import EmailCapture from '~/components/widgets/EmailCapture.astro';
 
+import heroImage from '~/assets/images/gallery/exterior-front-sunset.jpg';
+import aboutImage from '~/assets/images/gallery/mondo-pondo-trunk-interior.jpg';
+import stepsImage from '~/assets/images/gallery/forest-hammock-property.jpg';
+
 const metadata = {
   title: 'Banks Treehouse | A Hand-Crafted Treehouse Retreat in Banks, Idaho',
   description: 'Escape to a hand-crafted TinyHome Treehouse nestled in 8 acres of Ponderosa pine forest in Banks, Idaho. Hot tub, fire pit, lookout treehouse, and total seclusion. Book on Airbnb.',
@@ -37,8 +41,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-      alt: 'Hand-crafted treehouse retreat nestled among Ponderosa pine trees in Banks, Idaho',
+      src: heroImage,
+      alt: 'Banks Treehouse exterior at sunset, hand-crafted retreat nestled among Ponderosa pine trees',
     }}
   >
     <Fragment slot="title">
@@ -123,8 +127,8 @@ const metadata = {
       { title: 'A true one-of-a-kind creation — part art, part home, all magic' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      alt: 'Interior of a cozy treehouse cabin with warm wood finishes',
+      src: aboutImage,
+      alt: 'Mondo Pondo tree trunk growing through the interior of Banks Treehouse with ladder to upper bedroom',
     }}
   >
     <Fragment slot="content">
@@ -169,8 +173,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
-      alt: 'Peaceful pine forest trail leading to a cabin retreat',
+      src: stepsImage,
+      alt: 'Forest and hammock view of the Banks Treehouse property grounds among Ponderosa pines',
     }}
   />
 

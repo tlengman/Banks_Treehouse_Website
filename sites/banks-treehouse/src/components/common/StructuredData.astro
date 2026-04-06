@@ -1,4 +1,6 @@
 ---
+import coverImage from '~/assets/images/gallery/exterior-front-sunset.jpg';
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LodgingBusiness',
@@ -7,7 +9,7 @@ const structuredData = {
     'A hand-crafted TinyHome Treehouse nestled in 8 acres of Ponderosa pine forest in Banks, Idaho. Hot tub, fire pit, lookout treehouse, and total seclusion.',
   url: 'https://bankstreehouse.com',
   image: [
-    'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=80',
+    new URL(coverImage.src, 'https://bankstreehouse.com').href,
   ],
   address: {
     '@type': 'PostalAddress',

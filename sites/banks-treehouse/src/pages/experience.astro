@@ -6,6 +6,10 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+import payetteImage from '~/assets/images/gallery/hot-tub-sunset-view.jpg';
+import hikingImage from '~/assets/images/gallery/fire-pit-forest-sunset.jpg';
+import seasonalImage from '~/assets/images/gallery/exterior-forest-dusk.jpg';
+
 const metadata = {
   title: 'Experience & Things To Do',
   description: 'Discover activities at Banks Treehouse and nearby — hot tub, fire pit, forest trails, Payette River rafting, hot springs, hiking, and day trips to Boise and McCall.',
@@ -74,8 +78,8 @@ const metadata = {
       { title: 'Kirkham Hot Springs — natural riverside hot springs, 20 minutes north' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      alt: 'Whitewater rafting on the Payette River near Banks, Idaho',
+      src: payetteImage,
+      alt: 'Hot tub with sunset glowing through pine trees at Banks Treehouse',
     }}
   >
     <Fragment slot="content">
@@ -100,8 +104,8 @@ const metadata = {
       { title: 'Cross-Country Skiing & Snowshoeing — winter wonderland at elevation' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      alt: 'Hiking trail through Idaho mountain forest',
+      src: hikingImage,
+      alt: 'Fire pit area at sunset among Ponderosa pines on the Banks Treehouse property',
     }}
   >
     <Fragment slot="content">
@@ -147,8 +151,8 @@ const metadata = {
     tagline="Plan Ahead"
     title="Seasonal Guide"
     image={{
-      src: 'https://images.unsplash.com/photo-1418985227306-7191ea4e0b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      alt: 'Four seasons in the Idaho mountains — pine forest through the year',
+      src: seasonalImage,
+      alt: 'Banks Treehouse glowing through the forest at dusk, surrounded by Ponderosa pines',
     }}
   >
     <Fragment slot="content">

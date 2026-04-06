@@ -9,6 +9,11 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import EmailCapture from '~/components/widgets/EmailCapture.astro';
 
+import heroImage from '~/assets/images/gallery/exterior-entrance-sunset.jpg';
+import sanctuaryImage from '~/assets/images/gallery/kitchen-tree-trunk-cabinets.jpg';
+import hostImage from '~/assets/images/host/rusty-hill.jpg';
+import propertyImage from '~/assets/images/gallery/fire-pit-wide-forest.jpg';
+
 const metadata = {
   title: 'The Treehouse',
   description: 'Explore our hand-crafted TinyHome Treehouse in Banks, Idaho. Full kitchen, queen bedroom 30ft up, hot tub, fire pit, lookout treehouse, and 8 acres of Ponderosa pine forest.',
@@ -20,8 +25,8 @@ const metadata = {
   <Hero
     tagline="The Property"
     image={{
-      src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-      alt: 'Banks Treehouse — hand-crafted TinyHome nestled in Ponderosa pine forest',
+      src: heroImage,
+      alt: 'Banks Treehouse entrance at sunset, hand-crafted TinyHome nestled in Ponderosa pine forest',
     }}
   >
     <Fragment slot="title">
@@ -37,8 +42,8 @@ const metadata = {
     tagline="Welcome"
     title="Your Forest Sanctuary"
     image={{
-      src: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      alt: 'Warm interior of the treehouse with handcrafted wood details',
+      src: sanctuaryImage,
+      alt: 'Kitchen showing tree trunk growing through the floor of Banks Treehouse with handcrafted cabinets',
     }}
   >
     <Fragment slot="content">
@@ -140,8 +145,8 @@ const metadata = {
       { title: '111+ five-star reviews from guests worldwide' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      alt: 'Rusty Hill — Superhost and master craftsman',
+      src: hostImage,
+      alt: 'Rusty Hill — Superhost and master craftsman, black and white portrait',
     }}
   >
     <Fragment slot="content">
@@ -162,8 +167,8 @@ const metadata = {
     tagline="The Land"
     title="The Property"
     image={{
-      src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      alt: '8 acres of Ponderosa pine forest surrounding Banks Treehouse',
+      src: propertyImage,
+      alt: 'Wide view of the fire pit area and treehouse among Ponderosa pines on the 8-acre property',
     }}
   >
     <Fragment slot="content">
