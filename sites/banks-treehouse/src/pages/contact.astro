@@ -1,0 +1,74 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Contact from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+  description: 'Get in touch with Banks Treehouse. Ask about availability, the property, or anything else. We typically respond within an hour.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Get In Touch"
+  >
+    <Fragment slot="title">Contact Us</Fragment>
+    <Fragment slot="subtitle">
+      Have a question about the treehouse, your upcoming stay, or just want to say hello? We'd love to hear from you.
+    </Fragment>
+  </HeroText>
+
+  <Contact
+    id="contact-form"
+    title="Send Us a Message"
+    subtitle="We typically respond within an hour."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+        placeholder: 'Your name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+        placeholder: 'your@email.com',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+      name: 'message',
+      placeholder: 'Tell us about your question or inquiry...',
+    }}
+    disclaimer={{
+      label: 'By submitting this form, you agree to our privacy policy.',
+    }}
+    description="You can also reach us directly at info@bankstreehouse.com"
+  />
+
+  <Features2
+    title="Other Ways to Reach Us"
+    columns={3}
+    items={[
+      {
+        title: 'Email',
+        description: '<a href="mailto:info@bankstreehouse.com" class="text-primary hover:underline">info@bankstreehouse.com</a>',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Airbnb Messaging',
+        description: '<a href="https://www.airbnb.com/rooms/1110989650136663921" target="_blank" class="text-primary hover:underline">Message us on Airbnb</a>',
+        icon: 'tabler:brand-airbnb',
+      },
+      {
+        title: 'Location',
+        description: 'Banks, Idaho<br><span class="text-sm text-muted">Exact address provided after booking</span>',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>
