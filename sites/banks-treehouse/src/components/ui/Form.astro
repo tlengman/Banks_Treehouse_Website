@@ -67,6 +67,9 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     )
   }
 
+  <!-- Cloudflare Turnstile CAPTCHA placeholder — rendered when Turnstile JS is loaded -->
+  <div class="cf-turnstile mt-4" data-sitekey="0x0000000000000000000000" data-theme="light"></div>
+
   {
     button && (
       <div class="mt-10 grid">
