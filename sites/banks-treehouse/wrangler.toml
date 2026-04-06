@@ -1,0 +1,18 @@
+# Banks Treehouse — Cloudflare Pages Configuration
+# This file configures D1 bindings for Pages Functions
+
+name = "banks-treehouse"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+# D1 Database binding
+# After creating the database with:
+#   npx wrangler d1 create banks-treehouse-db
+# Update the database_id below with the actual ID
+[[d1_databases]]
+binding = "DB"
+database_name = "banks-treehouse-db"
+database_id = "TODO_SET_AFTER_D1_CREATION"
+
+# To run migrations:
+#   npx wrangler d1 migrations apply banks-treehouse-db --remote
