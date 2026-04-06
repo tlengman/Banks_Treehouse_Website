@@ -1,0 +1,71 @@
+---
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: 'Banks Treehouse',
+  description:
+    'A hand-crafted TinyHome Treehouse nestled in 8 acres of Ponderosa pine forest in Banks, Idaho. Hot tub, fire pit, lookout treehouse, and total seclusion.',
+  url: 'https://bankstreehouse.com',
+  image: [
+    'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=80',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Banks',
+    addressRegion: 'ID',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 44.08,
+    longitude: -115.96,
+  },
+  priceRange: '$$',
+  numberOfRooms: 1,
+  checkinTime: '15:00',
+  checkoutTime: '11:00',
+  petsAllowed: false,
+  smokingAllowed: false,
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Hot Tub', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Fire Pit', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'WiFi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Full Kitchen', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Self Check-in', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Lookout Treehouse', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Speaker Zones', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'TV', value: true },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.97',
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: '111',
+  },
+  containsPlace: {
+    '@type': 'Accommodation',
+    '@id': 'https://bankstreehouse.com/#treehouse',
+    name: 'The Treehouse',
+    description: 'Hand-crafted TinyHome Treehouse with queen bedroom loft, full kitchen, bathroom, and a living Ponderosa pine (Mondo Pondo) intersecting the living space.',
+    occupancy: {
+      '@type': 'QuantitativeValue',
+      value: 2,
+    },
+    numberOfBedrooms: 1,
+    numberOfBathroomsFull: 1,
+    bed: {
+      '@type': 'BedDetails',
+      typeOfBed: 'Queen',
+      numberOfBeds: 1,
+    },
+    floorSize: {
+      '@type': 'QuantitativeValue',
+      unitCode: 'ACR',
+      value: 8,
+    },
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
