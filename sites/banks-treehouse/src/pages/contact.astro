@@ -50,6 +50,9 @@ const metadata = {
     description="You can also reach us directly at info@bankstreehouse.com"
   />
 
+  <!-- Turnstile CAPTCHA script — loads only when TURNSTILE_SITE_KEY is configured -->
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
   <Features2
     title="Other Ways to Reach Us"
     columns={3}
