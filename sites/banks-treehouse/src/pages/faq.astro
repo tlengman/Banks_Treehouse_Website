@@ -1,0 +1,154 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'FAQ',
+  description: 'Frequently asked questions about Banks Treehouse — check-in, amenities, directions, policies, and what to expect during your treehouse stay in Banks, Idaho.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Questions & Answers"
+  >
+    <Fragment slot="title">Frequently Asked Questions</Fragment>
+    <Fragment slot="subtitle">
+      Everything you need to know before booking your treehouse escape.
+    </Fragment>
+  </HeroText>
+
+  <!-- Before Your Stay -->
+  <FAQs
+    title="Before Your Stay"
+    columns={1}
+    items={[
+      {
+        title: 'What time is check-in and check-out?',
+        description: 'Check-in is after 3:00 PM and check-out is before 11:00 AM. Self check-in with smartlock keyless entry — your code will be sent before your arrival.',
+      },
+      {
+        title: 'How do I get to the treehouse?',
+        description: 'Banks Treehouse is located in Banks, Idaho, about 1 hour north of Boise along Highway 55. Detailed directions are sent after booking. Note: in winter months (November–March), 4WD or chains may be needed for the access road.',
+      },
+      {
+        title: 'What should I bring?',
+        description: 'Bring your own groceries (the nearest store is about 30 minutes away in Horseshoe Bend), warm layers for evenings, hiking shoes if you plan to explore, and a swimsuit for the hot tub. Towels, linens, toiletries, and firewood are provided.',
+      },
+      {
+        title: 'Is there cell service? WiFi?',
+        description: 'Cell service in Banks is limited depending on your carrier. The treehouse has reliable WiFi for streaming, remote work, or staying connected when you want to.',
+      },
+      {
+        title: "Where's the nearest grocery store or restaurant?",
+        description: 'The nearest grocery store is in Horseshoe Bend, about 30 minutes south. For dining, there are a few options in Crouch/Garden Valley (20 minutes north) and more extensive options in Boise (1 hour south). We recommend stocking up before arrival.',
+      },
+      {
+        title: 'How many guests can stay?',
+        description: 'Banks Treehouse accommodates a maximum of 2 guests. This is an intimate retreat designed for couples or solo travelers seeking seclusion.',
+      },
+    ]}
+  />
+
+  <!-- The Treehouse -->
+  <FAQs
+    title="The Treehouse"
+    columns={1}
+    items={[
+      {
+        title: 'How big is the treehouse?',
+        description: "It's a tiny home — compact in footprint but tall in character. The space is unconventional with creative use of vertical space. The stairs to the bedroom loft are steep and ladder-like, which is part of the treehouse charm. Not recommended for guests with mobility concerns.",
+      },
+      {
+        title: "What's the bed situation?",
+        description: 'There is one queen bed in the loft bedroom, nearly 30 feet above the ground. The bedroom window lets in fresh air and provides a cozy spot to watch the stars.',
+      },
+      {
+        title: 'Tell me about the hot tub.',
+        description: "The hot tub is a short walk from the treehouse, surrounded by Ponderosa pines. It's available year-round and is especially magical on starry nights or during snowfall. Instructions for use are posted at the tub.",
+      },
+      {
+        title: 'What kitchen equipment is available?',
+        description: 'The kitchen includes a toaster oven, stovetop, refrigerator, slow cooker, dishes, cookware, and utensils. There is no full-size oven or dishwasher. Perfect for simple, cozy meals.',
+      },
+      {
+        title: 'What about the lookout treehouse?',
+        description: 'The lookout treehouse is a separate elevated platform you can climb up to for panoramic views of the forest and mountains. It\'s a favorite guest spot for morning coffee or sunset watching.',
+      },
+      {
+        title: 'How do the speakers and LED lighting work?',
+        description: 'The treehouse features built-in indoor and outdoor speaker zones you can connect to via Bluetooth. Hidden LED lighting throughout the space creates a magical ambiance — controls are provided in the welcome guide.',
+      },
+    ]}
+  />
+
+  <!-- Policies -->
+  <FAQs
+    title="Policies"
+    columns={1}
+    items={[
+      {
+        title: "What's the cancellation policy?",
+        description: 'Free cancellation within 24 hours of booking. After that, cancel up to 7 days before check-in for a partial refund (minus service fee). Check your Airbnb booking for specific policy details.',
+      },
+      {
+        title: 'Are pets allowed?',
+        description: 'No, pets are not permitted. This protects both the property and the local wildlife. The forested setting is home to deer, birds, and other animals we want to keep safe.',
+      },
+      {
+        title: 'Is smoking allowed?',
+        description: 'No. For fire safety and guest comfort, smoking is not allowed anywhere on the property. The forest setting makes fire safety especially important.',
+      },
+      {
+        title: "What's the minimum stay?",
+        description: 'The minimum stay is 2 nights. We encourage longer stays — it takes at least a day to truly unwind and let the forest work its magic.',
+      },
+    ]}
+  />
+
+  <!-- The Area -->
+  <FAQs
+    title="The Area"
+    columns={1}
+    items={[
+      {
+        title: 'What is there to do nearby?',
+        description: 'Banks is along the South Fork of the Payette River — world-class whitewater rafting, fly fishing, and kayaking are right down the road. Kirkham Hot Springs (natural hot springs along the river) is 20 minutes north. Hiking, mountain biking, and wildlife viewing are all nearby. Boise is an hour south for urban amenities.',
+      },
+      {
+        title: 'Are there other guests or neighbors?',
+        description: 'Complete seclusion. The treehouse sits on 8 private acres, and the surrounding lots are undeveloped forest. Your nearest neighbor is out of sight and earshot.',
+      },
+      {
+        title: 'What wildlife might I see?',
+        description: 'Deer are frequent visitors to the property. You may also spot eagles, hawks, woodpeckers, squirrels, and dozens of other bird species. The morning birdsong is a highlight of the stay.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        text: 'Book on Airbnb',
+        href: 'https://www.airbnb.com/rooms/1110989650136663921',
+        target: '_blank',
+        icon: 'tabler:brand-airbnb',
+      },
+    ]}
+  >
+    <Fragment slot="title">Still Have Questions?</Fragment>
+    <Fragment slot="subtitle">
+      We're happy to help. Reach out and we'll get back to you within an hour.
+    </Fragment>
+  </CallToAction>
+</Layout>
