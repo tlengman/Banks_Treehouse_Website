@@ -1,0 +1,332 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Book Direct',
+  description: 'Inquire about booking Banks Treehouse directly and skip the service fees. Fill out our booking inquiry form and we will follow up personally.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-2xl">
+    <!-- Hero Section -->
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-primary/10 text-primary">
+        <Icon name="tabler:calendar-heart" class="w-10 h-10" />
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Inquire About Direct Booking</h1>
+      <p class="text-xl text-muted max-w-xl mx-auto">
+        Skip the service fees. Direct booking discounts coming soon &mdash; leave your details and we'll follow up personally.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm font-medium text-muted">
+        <span class="flex items-center gap-1">
+          <Icon name="tabler:star-filled" class="w-4 h-4 text-yellow-500" />
+          4.97 rating
+        </span>
+        <span class="text-gray-300 dark:text-gray-600">|</span>
+        <span class="flex items-center gap-1">
+          <Icon name="tabler:messages" class="w-4 h-4 text-primary" />
+          111 reviews
+        </span>
+        <span class="text-gray-300 dark:text-gray-600">|</span>
+        <span class="flex items-center gap-1">
+          <Icon name="tabler:award" class="w-4 h-4 text-primary" />
+          Superhost 6 years
+        </span>
+      </div>
+    </div>
+
+    <!-- Booking Inquiry Form -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8">
+      <h2 class="text-xl font-bold mb-6">Tell Us About Your Trip</h2>
+
+      <form id="booking-form" novalidate>
+        <!-- Name -->
+        <div class="mb-5">
+          <label for="booking-name" class="block text-sm font-medium mb-1">
+            Name <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="booking-name"
+            name="name"
+            required
+            placeholder="Your name"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-5">
+          <label for="booking-email" class="block text-sm font-medium mb-1">
+            Email <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            id="booking-email"
+            name="email"
+            required
+            placeholder="your@email.com"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          />
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-5">
+          <label for="booking-phone" class="block text-sm font-medium mb-1">
+            Phone <span class="text-muted text-xs">(optional)</span>
+          </label>
+          <input
+            type="tel"
+            id="booking-phone"
+            name="phone"
+            placeholder="(555) 123-4567"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          />
+        </div>
+
+        <!-- Date Fields -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+          <div>
+            <label for="booking-checkin" class="block text-sm font-medium mb-1">
+              Check-in Date <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="date"
+              id="booking-checkin"
+              name="checkin"
+              required
+              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            />
+          </div>
+          <div>
+            <label for="booking-checkout" class="block text-sm font-medium mb-1">
+              Check-out Date <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="date"
+              id="booking-checkout"
+              name="checkout"
+              required
+              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            />
+          </div>
+        </div>
+
+        <!-- Number of Guests -->
+        <div class="mb-5">
+          <label class="block text-sm font-medium mb-2">Number of Guests</label>
+          <div class="flex gap-6">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="guests"
+                value="1"
+                class="w-4 h-4 text-primary border-gray-300 dark:border-gray-600"
+              />
+              <span>1 guest</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="guests"
+                value="2"
+                checked
+                class="w-4 h-4 text-primary border-gray-300 dark:border-gray-600"
+              />
+              <span>2 guests</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Special Requests -->
+        <div class="mb-5">
+          <label for="booking-requests" class="block text-sm font-medium mb-1">
+            Special Requests / Questions <span class="text-muted text-xs">(optional)</span>
+          </label>
+          <textarea
+            id="booking-requests"
+            name="requests"
+            rows="3"
+            placeholder="Any special requests, questions, or things we should know about your trip?"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 resize-y"
+          ></textarea>
+        </div>
+
+        <!-- How Did You Hear About Us -->
+        <div class="mb-6">
+          <label for="booking-referral" class="block text-sm font-medium mb-1">
+            How did you hear about us?
+          </label>
+          <select
+            id="booking-referral"
+            name="referral"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          >
+            <option value="">Select one...</option>
+            <option value="airbnb">Airbnb</option>
+            <option value="google">Google Search</option>
+            <option value="instagram">Instagram</option>
+            <option value="referral">Friend / Referral</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="grid">
+          <button
+            type="submit"
+            id="booking-submit"
+            class="btn-primary py-3 px-6 rounded-lg font-semibold text-white bg-primary hover:bg-secondary transition-colors duration-200 flex items-center justify-center gap-2"
+          >
+            <Icon name="tabler:send" class="w-5 h-5" />
+            Send Inquiry
+          </button>
+        </div>
+      </form>
+
+      <!-- Status Messages -->
+      <div id="booking-success" class="hidden mt-6 p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+        <div class="flex items-center gap-2">
+          <Icon name="tabler:circle-check" class="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+          <p class="text-green-700 dark:text-green-300 font-medium">Thank you! We'll review your inquiry and get back to you within an hour.</p>
+        </div>
+      </div>
+
+      <div id="booking-error" class="hidden mt-6 p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+        <div class="flex items-center gap-2">
+          <Icon name="tabler:alert-circle" class="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0" />
+          <p id="booking-error-text" class="text-red-700 dark:text-red-300 font-medium">Something went wrong. Please try again.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Airbnb Alternative -->
+    <div class="mt-8 text-center bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+      <p class="text-muted mb-3 text-sm">Prefer to book instantly?</p>
+      <a
+        href="https://www.airbnb.com/rooms/1110989650136663921"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 py-3 px-6 rounded-lg font-semibold text-white bg-[#FF5A5F] hover:bg-[#e0484d] transition-colors duration-200"
+      >
+        <Icon name="tabler:brand-airbnb" class="w-5 h-5" />
+        Book Instantly on Airbnb
+      </a>
+      <p class="text-muted text-sm mt-3">Current rate: ~$209/night on Airbnb</p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('booking-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('booking-submit') as HTMLButtonElement;
+    const successEl = document.getElementById('booking-success') as HTMLDivElement;
+    const errorEl = document.getElementById('booking-error') as HTMLDivElement;
+    const errorText = document.getElementById('booking-error-text') as HTMLParagraphElement;
+
+    // Set min dates to today
+    const today = new Date().toISOString().split('T')[0];
+    const checkinInput = document.getElementById('booking-checkin') as HTMLInputElement;
+    const checkoutInput = document.getElementById('booking-checkout') as HTMLInputElement;
+
+    if (checkinInput) checkinInput.min = today;
+    if (checkoutInput) checkoutInput.min = today;
+
+    // When check-in changes, update check-out min
+    checkinInput?.addEventListener('change', () => {
+      if (checkinInput.value) {
+        const nextDay = new Date(checkinInput.value);
+        nextDay.setDate(nextDay.getDate() + 1);
+        checkoutInput.min = nextDay.toISOString().split('T')[0];
+
+        // Clear checkout if it's before new min
+        if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
+          checkoutInput.value = '';
+        }
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Hide previous messages
+        successEl.classList.add('hidden');
+        errorEl.classList.add('hidden');
+
+        const name = (document.getElementById('booking-name') as HTMLInputElement).value.trim();
+        const email = (document.getElementById('booking-email') as HTMLInputElement).value.trim();
+        const phone = (document.getElementById('booking-phone') as HTMLInputElement).value.trim();
+        const checkin = checkinInput.value;
+        const checkout = checkoutInput.value;
+        const guestsRadio = document.querySelector('input[name="guests"]:checked') as HTMLInputElement;
+        const guests = guestsRadio ? parseInt(guestsRadio.value, 10) : 2;
+        const requests = (document.getElementById('booking-requests') as HTMLTextAreaElement).value.trim();
+        const referral = (document.getElementById('booking-referral') as HTMLSelectElement).value;
+
+        // Client-side validation
+        if (!name) {
+          showError('Please enter your name.');
+          return;
+        }
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showError('Please enter a valid email address.');
+          return;
+        }
+
+        if (!checkin) {
+          showError('Please select a check-in date.');
+          return;
+        }
+
+        if (!checkout) {
+          showError('Please select a check-out date.');
+          return;
+        }
+
+        if (checkout <= checkin) {
+          showError('Check-out date must be after check-in date.');
+          return;
+        }
+
+        // Disable submit button
+        submitBtn.disabled = true;
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+          const response = await fetch('/api/booking-inquiry', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, phone, checkin, checkout, guests, requests, referral }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            successEl.classList.remove('hidden');
+            form.classList.add('hidden');
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            showError(data.error || 'Something went wrong. Please try again.');
+          }
+        } catch {
+          showError('Unable to submit your inquiry. Please check your connection and try again.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalContent;
+        }
+      });
+    }
+
+    function showError(message: string) {
+      errorText.textContent = message;
+      errorEl.classList.remove('hidden');
+      errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+</script>
