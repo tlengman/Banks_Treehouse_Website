@@ -3,6 +3,39 @@ import Layout from '~/layouts/PageLayout.astro';
 import Gallery from '~/components/widgets/Gallery.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+// Exterior
+import imgExteriorFrontSunset from '~/assets/images/gallery/exterior-front-sunset.jpg';
+import imgExteriorEntranceSunset from '~/assets/images/gallery/exterior-entrance-sunset.jpg';
+import imgExteriorForestDusk from '~/assets/images/gallery/exterior-forest-dusk.jpg';
+import imgBalconyTableForestView from '~/assets/images/gallery/balcony-table-forest-view.jpg';
+
+// Interior
+import imgKitchenPanoramicWindows from '~/assets/images/gallery/kitchen-panoramic-windows.jpg';
+import imgLivingRoomStairsCouch from '~/assets/images/gallery/living-room-stairs-couch.jpg';
+import imgKitchenCounterWindows from '~/assets/images/gallery/kitchen-counter-windows.jpg';
+import imgLivingKitchenOverview from '~/assets/images/gallery/living-kitchen-overview.jpg';
+import imgBedroomLoftQueenBed from '~/assets/images/gallery/bedroom-loft-queen-bed.jpg';
+import imgBedroomLoftViewDown from '~/assets/images/gallery/bedroom-loft-view-down.jpg';
+import imgBathroomShowerVanity from '~/assets/images/gallery/bathroom-shower-vanity.jpg';
+import imgMezzanineTvDeskLoft from '~/assets/images/gallery/mezzanine-tv-desk-loft.jpg';
+
+// Mondo Pondo
+import imgEntranceMondoPondoTree from '~/assets/images/gallery/entrance-mondo-pondo-tree.jpg';
+import imgMondoPondoTrunkInterior from '~/assets/images/gallery/mondo-pondo-trunk-interior.jpg';
+import imgMondoPondoEntryway from '~/assets/images/gallery/mondo-pondo-entryway.jpg';
+import imgKitchenTreeTrunkCabinets from '~/assets/images/gallery/kitchen-tree-trunk-cabinets.jpg';
+
+// Hot Tub & Fire Pit
+import imgHotTubSunsetView from '~/assets/images/gallery/hot-tub-sunset-view.jpg';
+import imgFirePitForestSunset from '~/assets/images/gallery/fire-pit-forest-sunset.jpg';
+import imgFirePitWideForest from '~/assets/images/gallery/fire-pit-wide-forest.jpg';
+
+// Lookout & Outdoors
+import imgLookoutTreehousePlatform from '~/assets/images/gallery/lookout-treehouse-platform.jpg';
+import imgGiantSwingForest from '~/assets/images/gallery/giant-swing-forest.jpg';
+import imgNetLoftTvPillows from '~/assets/images/gallery/net-loft-tv-pillows.jpg';
+import imgForestHammockProperty from '~/assets/images/gallery/forest-hammock-property.jpg';
+
 const metadata = {
   title: 'Gallery',
   description: 'Explore photos of Banks Treehouse — a hand-crafted TinyHome Treehouse in Banks, Idaho. See the interior, exterior, hot tub, fire pit, lookout treehouse, and surrounding pine forest.',
@@ -11,98 +44,123 @@ const metadata = {
 const galleryImages = [
   // Exterior
   {
-    src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80',
-    alt: 'Treehouse exterior surrounded by towering pine trees',
+    src: imgExteriorFrontSunset.src,
+    alt: 'Banks Treehouse exterior, front view at sunset among Ponderosa pines',
     category: 'Exterior',
   },
   {
-    src: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800&q=80',
-    alt: 'Hand-crafted wooden cabin nestled in the forest',
+    src: imgExteriorEntranceSunset.src,
+    alt: 'Treehouse entrance at sunset with warm light on handcrafted wood',
     category: 'Exterior',
   },
   {
-    src: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=800&q=80',
-    alt: 'Cabin entrance with rustic wood details',
+    src: imgExteriorForestDusk.src,
+    alt: 'Treehouse glowing through the forest at dusk',
     category: 'Exterior',
   },
   {
-    src: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800&q=80',
-    alt: 'Forest path leading to the treehouse',
+    src: imgBalconyTableForestView.src,
+    alt: 'Balcony with teak table overlooking the pine forest',
     category: 'Exterior',
   },
   // Interior
   {
-    src: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80',
-    alt: 'Cozy treehouse interior with warm wood finishes',
+    src: imgKitchenPanoramicWindows.src,
+    alt: 'Kitchen with large panoramic windows looking into the forest',
     category: 'Interior',
   },
   {
-    src: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
-    alt: 'Queen bedroom with forest views — 30ft above the ground',
+    src: imgLivingRoomStairsCouch.src,
+    alt: 'Living room with steel stairs, leather couch, and kitchen behind',
     category: 'Interior',
   },
   {
-    src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
-    alt: 'Fully equipped kitchen with rustic charm',
+    src: imgKitchenCounterWindows.src,
+    alt: 'Kitchen counter detail with forest views through large windows',
     category: 'Interior',
   },
   {
-    src: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&q=80',
-    alt: 'Living area with hand-crafted wood details',
+    src: imgLivingKitchenOverview.src,
+    alt: 'Living area with round window, barn door, and kitchen overview',
     category: 'Interior',
+  },
+  {
+    src: imgBedroomLoftQueenBed.src,
+    alt: 'Queen bed in the A-frame loft bedroom with pine wood ceiling — nearly 30ft above the ground',
+    category: 'Interior',
+  },
+  {
+    src: imgBedroomLoftViewDown.src,
+    alt: 'Bedroom loft looking down with built-in storage cabinets',
+    category: 'Interior',
+  },
+  {
+    src: imgBathroomShowerVanity.src,
+    alt: 'Bathroom with walk-in shower, vanity, and natural light',
+    category: 'Interior',
+  },
+  {
+    src: imgMezzanineTvDeskLoft.src,
+    alt: 'Mezzanine level with TV, desk area, and net loft above',
+    category: 'Interior',
+  },
+  // Mondo Pondo
+  {
+    src: imgEntranceMondoPondoTree.src,
+    alt: 'Front door showing the Mondo Pondo tree visible inside the treehouse',
+    category: 'Mondo Pondo',
+  },
+  {
+    src: imgMondoPondoTrunkInterior.src,
+    alt: 'Mondo Pondo tree trunk growing through the interior with ladder to upper bedroom',
+    category: 'Mondo Pondo',
+  },
+  {
+    src: imgMondoPondoEntryway.src,
+    alt: 'Mondo Pondo tree framed by the entryway of the treehouse',
+    category: 'Mondo Pondo',
+  },
+  {
+    src: imgKitchenTreeTrunkCabinets.src,
+    alt: 'Kitchen showing the tree trunk growing through the floor with handcrafted cabinets',
+    category: 'Mondo Pondo',
   },
   // Hot Tub & Fire Pit
   {
-    src: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=80',
-    alt: 'Hot tub surrounded by Ponderosa pines under the stars',
+    src: imgHotTubSunsetView.src,
+    alt: 'Hot tub with sunset glowing through the pine trees',
     category: 'Hot Tub & Fire Pit',
   },
   {
-    src: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?w=800&q=80',
-    alt: 'Fire pit area for evening gatherings in the forest',
+    src: imgFirePitForestSunset.src,
+    alt: 'Fire pit area at sunset among the Ponderosa pines',
     category: 'Hot Tub & Fire Pit',
   },
   {
-    src: 'https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=800&q=80',
-    alt: 'Starry night sky above the outdoor relaxation area',
+    src: imgFirePitWideForest.src,
+    alt: 'Wide view of the fire pit area with the treehouse visible through the forest',
     category: 'Hot Tub & Fire Pit',
   },
-  // Views & Nature
+  // Lookout & Outdoors
   {
-    src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80',
-    alt: 'Ponderosa pine forest on the 8-acre property',
-    category: 'Views & Nature',
+    src: imgLookoutTreehousePlatform.src,
+    alt: 'The lookout treehouse platform built on a tree for panoramic forest views',
+    category: 'Lookout & Outdoors',
   },
   {
-    src: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80',
-    alt: 'Sunlight filtering through towering pine trees',
-    category: 'Views & Nature',
+    src: imgGiantSwingForest.src,
+    alt: 'Giant blue swing hanging among the pine trees on the property',
+    category: 'Lookout & Outdoors',
   },
   {
-    src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-    alt: 'Mountain views from the Banks, Idaho property',
-    category: 'Views & Nature',
+    src: imgNetLoftTvPillows.src,
+    alt: 'Net loft with TV, sheepskin rug, and colorful pillows — a cozy hangout spot',
+    category: 'Lookout & Outdoors',
   },
   {
-    src: 'https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=800&q=80',
-    alt: 'Morning mist through the pine forest',
-    category: 'Views & Nature',
-  },
-  // Lookout Treehouse
-  {
-    src: 'https://images.unsplash.com/photo-1488197047962-b48492f0ba53?w=800&q=80',
-    alt: 'Lookout treehouse perch among the treetops',
-    category: 'Lookout Treehouse',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=800&q=80',
-    alt: 'Panoramic forest views from the lookout platform',
-    category: 'Lookout Treehouse',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
-    alt: 'Sunset seen from the elevated lookout point',
-    category: 'Lookout Treehouse',
+    src: imgForestHammockProperty.src,
+    alt: 'Forest and hammock view of the property grounds among towering pines',
+    category: 'Lookout & Outdoors',
   },
 ];
 ---
@@ -113,7 +171,7 @@ const galleryImages = [
     title="Explore Banks Treehouse"
     subtitle="Browse photos of the hand-crafted treehouse, surrounding forest, and all the experiences that await you."
     images={galleryImages}
-    categories={['Exterior', 'Interior', 'Hot Tub & Fire Pit', 'Views & Nature', 'Lookout Treehouse']}
+    categories={['Exterior', 'Interior', 'Mondo Pondo', 'Hot Tub & Fire Pit', 'Lookout & Outdoors']}
   />
 
   <CallToAction
