@@ -1,0 +1,170 @@
+---
+export interface Props {
+  variant?: 'inline' | 'footer' | 'popup';
+  title?: string;
+  subtitle?: string;
+  turnstileSiteKey?: string;
+}
+
+const {
+  variant = 'inline',
+  title = 'Stay in the Loop',
+  subtitle = 'Get our guest guide + exclusive direct booking discounts.',
+  turnstileSiteKey,
+} = Astro.props;
+
+const wrapperClasses: Record<string, string> = {
+  inline: 'py-12 md:py-16',
+  footer: 'py-6 border-t border-gray-200 dark:border-gray-700',
+  popup: '',
+};
+---
+
+{variant === 'popup' ? (
+  <!-- Popup variant — rendered hidden, shown via JS -->
+  <div
+    id="email-popup"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50"
+  >
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md mx-4 p-8 relative">
+      <button
+        id="email-popup-close"
+        class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-2xl leading-none"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+      <h3 class="text-2xl font-heading font-bold mb-2">{title}</h3>
+      <p class="text-muted mb-4">{subtitle}</p>
+      <form class="email-capture-form flex flex-col gap-3" data-variant="popup">
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent"
+        />
+        <button
+          type="submit"
+          class="w-full px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary transition-colors"
+        >
+          Send Me the Guide
+        </button>
+        <p class="email-capture-status text-sm text-center hidden"></p>
+      </form>
+    </div>
+  </div>
+) : (
+  <!-- Inline or footer variant -->
+  <div class={`${wrapperClasses[variant]} px-4`}>
+    <div class="max-w-3xl mx-auto text-center">
+      {variant === 'inline' && (
+        <h3 class="text-2xl md:text-3xl font-heading font-bold mb-2">{title}</h3>
+      )}
+      <p class={`text-muted ${variant === 'inline' ? 'mb-6 text-lg' : 'mb-3 text-sm'}`}>
+        {subtitle}
+      </p>
+      <form class="email-capture-form flex flex-col sm:flex-row gap-3 justify-center max-w-lg mx-auto" data-variant={variant}>
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent"
+        />
+        <button
+          type="submit"
+          class="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary transition-colors whitespace-nowrap"
+        >
+          Subscribe
+        </button>
+      </form>
+      <p class="email-capture-status text-sm mt-2 hidden"></p>
+    </div>
+  </div>
+)}
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Handle all email capture forms
+    document.querySelectorAll('.email-capture-form').forEach((form) => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const emailInput = form.querySelector('input[name="email"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const status = form.parentElement.querySelector('.email-capture-status') ||
+                       form.closest('.email-capture-form')?.parentElement?.querySelector('.email-capture-status');
+
+        const email = emailInput?.value?.trim();
+        if (!email) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Subscribing...';
+
+        try {
+          const response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+          const data = await response.json();
+
+          if (status) {
+            status.classList.remove('hidden', 'text-red-600');
+            if (response.ok) {
+              status.classList.add('text-green-600');
+              status.textContent = data.message || 'Subscribed!';
+              emailInput.value = '';
+            } else {
+              status.classList.add('text-red-600');
+              status.textContent = data.error || 'Something went wrong.';
+            }
+          }
+        } catch {
+          if (status) {
+            status.classList.remove('hidden');
+            status.classList.add('text-red-600');
+            status.textContent = 'Network error. Please try again.';
+          }
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = form.dataset.variant === 'popup' ? 'Send Me the Guide' : 'Subscribe';
+        }
+      });
+    });
+
+    // Popup logic — show once after 30s or 50% scroll
+    const popup = document.getElementById('email-popup');
+    if (popup && !sessionStorage.getItem('emailPopupShown')) {
+      let shown = false;
+      const showPopup = () => {
+        if (shown) return;
+        shown = true;
+        sessionStorage.setItem('emailPopupShown', 'true');
+        popup.classList.remove('hidden');
+        popup.classList.add('flex');
+      };
+
+      // Show after 30 seconds
+      setTimeout(showPopup, 30000);
+
+      // Show on 50% scroll
+      window.addEventListener('scroll', () => {
+        const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        if (scrollPercent > 0.5) showPopup();
+      }, { passive: true });
+
+      // Close popup
+      document.getElementById('email-popup-close')?.addEventListener('click', () => {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
+      });
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+          popup.classList.add('hidden');
+          popup.classList.remove('flex');
+        }
+      });
+    }
+  });
+</script>
