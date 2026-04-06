@@ -9,6 +9,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import EmailCapture from '~/components/widgets/EmailCapture.astro';
 
 const metadata = {
   title: 'Banks Treehouse | A Hand-Crafted Treehouse Retreat in Banks, Idaho',
@@ -210,6 +211,14 @@ const metadata = {
       { title: 'Superhost Years', amount: '6' },
       { title: 'Forest Acres', amount: '8' },
     ]}
+  />
+
+  <!-- Email Capture ********** -->
+
+  <EmailCapture
+    variant="inline"
+    title="Get the Guest Guide"
+    subtitle="Sign up for our guest guide + exclusive direct booking discounts when they become available."
   />
 
   <!-- CallToAction *********** -->
