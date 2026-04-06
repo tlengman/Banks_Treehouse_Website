@@ -1,0 +1,53 @@
+{
+  "zone": "bankstreehouse.com",
+  "zone_id": "18d16affeea311557b608d8172238986",
+  "status": "pending_setup",
+  "notes": "Owner's forwarding email needed. Once provided, run: /infra-setup --email-routing --site treefort",
+  "routing_rules": [
+    {
+      "address": "info@bankstreehouse.com",
+      "forward_to": "TODO_OWNER_EMAIL",
+      "description": "General inquiries"
+    },
+    {
+      "address": "bookings@bankstreehouse.com",
+      "forward_to": "TODO_OWNER_EMAIL",
+      "description": "Booking inquiries"
+    },
+    {
+      "address": "support@bankstreehouse.com",
+      "forward_to": "TODO_OWNER_EMAIL",
+      "description": "Guest support"
+    }
+  ],
+  "catch_all": {
+    "action": "forward",
+    "forward_to": "TODO_OWNER_EMAIL",
+    "description": "Catch-all for any other @bankstreehouse.com addresses"
+  },
+  "dns_records_needed": [
+    {
+      "type": "MX",
+      "name": "bankstreehouse.com",
+      "content": "route1.mx.cloudflare.net",
+      "priority": 69
+    },
+    {
+      "type": "MX",
+      "name": "bankstreehouse.com",
+      "content": "route2.mx.cloudflare.net",
+      "priority": 28
+    },
+    {
+      "type": "MX",
+      "name": "bankstreehouse.com",
+      "content": "route3.mx.cloudflare.net",
+      "priority": 12
+    },
+    {
+      "type": "TXT",
+      "name": "bankstreehouse.com",
+      "content": "v=spf1 include:_spf.mx.cloudflare.net ~all"
+    }
+  ]
+}
