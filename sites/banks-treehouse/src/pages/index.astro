@@ -2,40 +2,217 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Banks Treehouse | A Hand-Crafted Treehouse Retreat in Banks, Idaho',
+  description: 'Escape to a hand-crafted TinyHome Treehouse nestled in 8 acres of Ponderosa pine forest in Banks, Idaho. Hot tub, fire pit, lookout treehouse, and total seclusion. Book on Airbnb.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- Hero ******************* -->
+
   <Hero
     tagline="Banks, Idaho"
     actions={[
       {
         variant: 'primary',
-        text: 'Book Your Stay',
+        text: 'Book on Airbnb',
         href: 'https://www.airbnb.com/rooms/1110989650136663921',
         target: '_blank',
-        icon: 'tabler:external-link',
+        icon: 'tabler:brand-airbnb',
+      },
+      {
+        text: 'Explore the Treehouse',
+        href: '/the-treehouse',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-      alt: 'Treehouse nestled among pine trees in Idaho forest',
+      alt: 'Hand-crafted treehouse retreat nestled among Ponderosa pine trees in Banks, Idaho',
     }}
   >
     <Fragment slot="title">
-      Your Whimsical Escape Into the Idaho Pines
+      A Treehouse Escape in the <span class="text-accent highlight">Idaho Pines</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      A hand-crafted TinyHome Treehouse nestled in 8 acres of Ponderosa pine forest.
-      Disconnect from the everyday and reconnect with nature in Banks, Idaho.
+      A hand-crafted TinyHome sanctuary nestled in 8 acres of Ponderosa pine forest.
+      Disconnect from the everyday and reconnect with nature.
     </Fragment>
   </Hero>
+
+  <!-- Note/Stats Bar ******************* -->
+
+  <Note
+    icon="tabler:tree"
+    title="2 Guests · 1 Bedroom · Queen Bed · Hot Tub · 8 Acres of Pine Forest"
+  />
+
+  <!-- Features — Amenities *************** -->
+
+  <Features
+    id="amenities"
+    tagline="What Awaits You"
+    title="Amenities & Highlights"
+    subtitle="Everything you need for a peaceful retreat, thoughtfully crafted into every detail."
+    columns={2}
+    items={[
+      {
+        title: 'Hot Tub',
+        description: 'Soak under the stars surrounded by towering Ponderosa pines. The perfect end to any day in the forest.',
+        icon: 'tabler:bath',
+      },
+      {
+        title: 'Fire Pit',
+        description: 'Gather around the outdoor fire pit for evenings of warmth, stargazing, and forest sounds.',
+        icon: 'tabler:campfire',
+      },
+      {
+        title: 'Lookout Treehouse',
+        description: 'Climb up to the lookout perch for panoramic views of the surrounding forest and mountains.',
+        icon: 'tabler:binoculars',
+      },
+      {
+        title: 'Speaker Zones',
+        description: 'Indoor and outdoor speaker zones let you set the mood with your own music throughout the property.',
+        icon: 'tabler:music',
+      },
+      {
+        title: 'Full Kitchen',
+        description: 'A fully equipped kitchen with everything you need to cook a cozy meal in the trees.',
+        icon: 'tabler:chef-hat',
+      },
+      {
+        title: 'Smart Home',
+        description: 'Hidden LED lighting, smartlock self check-in, and modern conveniences wrapped in rustic charm.',
+        icon: 'tabler:smart-home',
+      },
+      {
+        title: 'WiFi',
+        description: 'Stay connected when you want to — reliable WiFi for streaming, remote work, or sharing your adventure.',
+        icon: 'tabler:wifi',
+      },
+      {
+        title: 'Self Check-in',
+        description: 'Arrive on your own schedule with smartlock keyless entry. Your adventure starts the moment you arrive.',
+        icon: 'tabler:key',
+      },
+    ]}
+  />
+
+  <!-- Content — About the Treehouse **************** -->
+
+  <Content
+    isReversed
+    tagline="The Story"
+    title="About the Treehouse"
+    items={[
+      { title: 'Hand-crafted over 2.5 years by host Rusty Hill' },
+      { title: 'Built around "Mondo Pondo" — a majestic Ponderosa pine that intersects the living space' },
+      { title: 'Perched among 8 acres of private pine forest at ~5,000 ft elevation' },
+      { title: 'A true one-of-a-kind creation — part art, part home, all magic' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      alt: 'Interior of a cozy treehouse cabin with warm wood finishes',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Where Nature Meets Craftsmanship</h3>
+      This isn't a typical vacation rental. Rusty spent two and a half years hand-crafting this TinyHome Treehouse,
+      building it around a living Ponderosa pine tree he affectionately calls "Mondo Pondo." The result is a space where
+      the forest doesn't just surround you — it's part of the home itself. Every beam, every detail tells a story of
+      passion, patience, and a deep love for the Idaho wilderness.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps — Your Stay ****************** -->
+
+  <Steps
+    id="your-stay"
+    tagline="How It Works"
+    title="Your Stay"
+    items={[
+      {
+        title: 'Book Your Dates',
+        description: 'Browse availability and reserve your treehouse getaway through our Airbnb listing. Instant booking available.',
+        icon: 'tabler:calendar-check',
+      },
+      {
+        title: 'Self Check-in with Smartlock',
+        description: 'Arrive at your convenience and let yourself in with keyless entry. Check-in instructions sent before your stay.',
+        icon: 'tabler:lock-open',
+      },
+      {
+        title: 'Explore 8 Acres of Forest',
+        description: 'Wander the private pine forest, discover the lookout treehouse, or simply breathe in the mountain air.',
+        icon: 'tabler:trees',
+      },
+      {
+        title: 'Relax & Reconnect',
+        description: 'Soak in the hot tub, warm up by the fire pit, and let the forest work its magic. This is your escape.',
+        icon: 'tabler:heart',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Peaceful pine forest trail leading to a cabin retreat',
+    }}
+  />
+
+  <!-- Testimonials ************ -->
+
+  <Testimonials
+    tagline="Guest Reviews"
+    title="What Our Guests Say"
+    subtitle="4.97 out of 5 stars from 111 reviews — Superhost for 6 years running."
+    testimonials={[
+      {
+        testimonial:
+          "The pictures don't do the house justice. It was beyond anything we could have imagined. The attention to detail in every corner, the hot tub under the pines, the fire pit — absolutely magical. We didn't want to leave.",
+        name: 'Jessica & Mark',
+        job: 'November 2025',
+      },
+      {
+        testimonial:
+          "Truly unique cabin experience. Rusty's craftsmanship is incredible — you can see the love and care in every piece of wood. The lookout treehouse was our favorite spot. Already planning our return trip.",
+        name: 'Sarah',
+        job: 'September 2025',
+      },
+      {
+        testimonial:
+          "Absolutely enchanting and so fun! We loved the hidden LED lighting, the speaker system, and especially Mondo Pondo right there in the living room. This is the most unique stay we've ever booked. 10/10.",
+        name: 'David & Amy',
+        job: 'August 2025',
+      },
+    ]}
+  />
+
+  <!-- Stats ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Guest Rating', amount: '4.97' },
+      { title: 'Reviews', amount: '111+' },
+      { title: 'Superhost Years', amount: '6' },
+      { title: 'Forest Acres', amount: '8' },
+    ]}
+  />
+
+  <!-- CallToAction *********** -->
 
   <CallToAction
     actions={[
@@ -44,14 +221,15 @@ const metadata = {
         text: 'Book on Airbnb',
         href: 'https://www.airbnb.com/rooms/1110989650136663921',
         target: '_blank',
-        icon: 'tabler:external-link',
+        icon: 'tabler:brand-airbnb',
       },
     ]}
   >
     <Fragment slot="title">Ready for Your Treehouse Adventure?</Fragment>
 
     <Fragment slot="subtitle">
-      Book your stay and experience the magic of Banks Treehouse.
+      Escape the ordinary. Book your stay at Banks Treehouse and discover why guests
+      give us a 4.97-star rating.
     </Fragment>
   </CallToAction>
 </Layout>
