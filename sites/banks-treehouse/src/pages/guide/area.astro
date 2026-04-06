@@ -1,0 +1,123 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Area Guide',
+  description: 'Nearby essentials and activities around Banks Treehouse — gas, groceries, restaurants, and things to do.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-2xl">
+    <a href="/guide" class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-8">
+      <Icon name="tabler:arrow-left" class="w-4 h-4" />
+      Back to Guide
+    </a>
+
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-primary/10 text-primary">
+        <Icon name="tabler:map-2" class="w-10 h-10" />
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight">Area Guide</h1>
+      <p class="text-muted mt-2">Essentials and activities near the treehouse</p>
+    </div>
+
+    <!-- Essentials -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:shopping-cart" class="w-5 h-5 text-primary" />
+        Essentials
+      </h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:gas-station" class="w-6 h-6 text-muted mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Nearest Gas Station</p>
+            <p class="text-muted">Horseshoe Bend — approximately 30 minutes south on Hwy 55</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:building-store" class="w-6 h-6 text-muted mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Nearest Grocery Store</p>
+            <p class="text-muted">Horseshoe Bend — approximately 30 minutes south. Stock up before arrival!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dining -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:tools-kitchen-2" class="w-5 h-5 text-primary" />
+        Dining
+      </h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:map-pin" class="w-6 h-6 text-muted mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Crouch / Garden Valley</p>
+            <p class="text-muted">~20 minutes north. A few restaurants and a general store.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:map-pin" class="w-6 h-6 text-muted mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Boise</p>
+            <p class="text-muted">~1 hour south. Full range of restaurants, bars, and shops.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activities -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:trees" class="w-5 h-5 text-primary" />
+        Things to Do
+      </h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:flame" class="w-6 h-6 text-orange-500 mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Kirkham Hot Springs</p>
+            <p class="text-muted">Natural hot springs along the South Fork of the Payette River. ~20 minutes north. Free, open year-round. Best at sunset or under the stars.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:kayak" class="w-6 h-6 text-blue-500 mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Whitewater Rafting</p>
+            <p class="text-muted">Banks is on the South Fork of the Payette — world-class rapids. Several outfitters operate seasonally (May-September). Book ahead for guided trips.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:fish" class="w-6 h-6 text-teal-500 mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Fishing</p>
+            <p class="text-muted">Fly fishing and spin casting on the Payette River. Idaho fishing license required.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:walk" class="w-6 h-6 text-green-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Hiking & Mountain Biking</p>
+            <p class="text-muted">Trails accessible from the Boise National Forest. The surrounding forest is yours to explore.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:binoculars" class="w-6 h-6 text-amber-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold text-lg">Wildlife Viewing</p>
+            <p class="text-muted">Deer, eagles, hawks, woodpeckers, and more. Morning and dusk are the best times — bring binoculars.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

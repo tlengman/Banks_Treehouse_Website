@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'WiFi Guide',
+  description: 'WiFi connection instructions for Banks Treehouse guests.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-2xl">
+    <a href="/guide" class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-8">
+      <Icon name="tabler:arrow-left" class="w-4 h-4" />
+      Back to Guide
+    </a>
+
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-primary/10 text-primary">
+        <Icon name="tabler:wifi" class="w-10 h-10" />
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight">WiFi</h1>
+    </div>
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 mb-8">
+      <div class="space-y-6">
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Network Name</p>
+          <p class="text-3xl font-bold">BanksTreehouse</p>
+        </div>
+        <div>
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Password</p>
+          <p class="text-3xl font-bold text-primary">[provided at check-in]</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-xl font-semibold flex items-center gap-2">
+        <Icon name="tabler:tool" class="w-5 h-5 text-muted" />
+        Troubleshooting
+      </h2>
+      <ul class="space-y-3 text-lg">
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:circle-check" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+          <span>Make sure you're connecting to <strong>BanksTreehouse</strong> (not any other nearby network).</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:circle-check" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+          <span>If the connection drops, toggle WiFi off and back on.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:circle-check" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+          <span>If that doesn't work, restart the router. It's located inside the main cabinet near the kitchen counter. Unplug it, wait 30 seconds, and plug it back in.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:circle-check" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+          <span>WiFi should reconnect within 2-3 minutes after a router restart.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:info-circle" class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+          <span>Cell service in Banks is limited depending on your carrier. WiFi calling is recommended if you need to make calls.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Layout>

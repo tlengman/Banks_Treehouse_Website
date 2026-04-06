@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Hot Tub Guide',
+  description: 'Hot tub instructions and safety rules for Banks Treehouse guests.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-2xl">
+    <a href="/guide" class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-8">
+      <Icon name="tabler:arrow-left" class="w-4 h-4" />
+      Back to Guide
+    </a>
+
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-primary/10 text-primary">
+        <Icon name="tabler:droplet-filled" class="w-10 h-10" />
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight">Hot Tub</h1>
+    </div>
+
+    <!-- Location -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-3">
+        <Icon name="tabler:map-pin" class="w-5 h-5 text-primary" />
+        Location
+      </h2>
+      <p class="text-lg">The hot tub is a short walk from the treehouse, nestled among the Ponderosa pines. Follow the lit path from the deck.</p>
+    </div>
+
+    <!-- How to Use -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:settings" class="w-5 h-5 text-primary" />
+        How to Use
+      </h2>
+      <ol class="space-y-3 text-lg list-decimal list-inside">
+        <li>Remove the hot tub cover and set it aside on the cover lifter.</li>
+        <li>Press the <strong>Jets</strong> button on the control panel to turn on the jets.</li>
+        <li>Use the <strong>Temp</strong> arrows to adjust temperature (recommended: 100-102&deg;F).</li>
+        <li>Press Jets button again to cycle through jet speeds or turn off.</li>
+        <li>The <strong>Light</strong> button toggles the underwater LED lighting.</li>
+        <li>When finished, <strong>always replace the cover</strong> to retain heat and keep debris out.</li>
+      </ol>
+    </div>
+
+    <!-- Hours -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-3">
+        <Icon name="tabler:clock" class="w-5 h-5 text-primary" />
+        Hours
+      </h2>
+      <p class="text-lg">The hot tub is available <strong>24 hours</strong>. Please be mindful of noise after 10 PM (the forest carries sound).</p>
+    </div>
+
+    <!-- Safety Rules -->
+    <div class="bg-red-50 dark:bg-red-900/20 rounded-2xl border border-red-200 dark:border-red-800 p-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4 text-red-700 dark:text-red-400">
+        <Icon name="tabler:alert-triangle" class="w-5 h-5" />
+        Safety Rules
+      </h2>
+      <ul class="space-y-3 text-lg">
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:x" class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
+          <span><strong>No glass</strong> near the hot tub. Use plastic or metal containers only.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:droplet" class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+          <span><strong>Shower before use</strong> to keep the water clean.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:temperature" class="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
+          <span><strong>Max temperature: 104&deg;F.</strong> Do not exceed this setting.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:clock" class="w-5 h-5 text-muted mt-1 flex-shrink-0" />
+          <span>Limit sessions to <strong>15-20 minutes</strong>, especially in warmer temps.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:shield-check" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+          <span><strong>Always replace the cover</strong> when you're done. Don't leave it off overnight.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="tabler:bottle" class="w-5 h-5 text-muted mt-1 flex-shrink-0" />
+          <span>Stay hydrated. Bring water with you.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Layout>

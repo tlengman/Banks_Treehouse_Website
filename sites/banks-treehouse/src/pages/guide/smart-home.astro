@@ -1,0 +1,131 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Smart Home Guide',
+  description: 'Speakers, lighting, TV, and thermostat instructions for Banks Treehouse guests.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-2xl">
+    <a href="/guide" class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-8">
+      <Icon name="tabler:arrow-left" class="w-4 h-4" />
+      Back to Guide
+    </a>
+
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-primary/10 text-primary">
+        <Icon name="tabler:smart-home" class="w-10 h-10" />
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight">Smart Home</h1>
+    </div>
+
+    <!-- Bluetooth Speakers -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:bluetooth" class="w-5 h-5 text-primary" />
+        Bluetooth Speakers
+      </h2>
+      <p class="text-muted mb-4">Two speaker zones available via Bluetooth. Connect from your phone or device.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4 text-center">
+          <Icon name="tabler:home" class="w-8 h-8 text-primary mx-auto mb-2" />
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Indoor</p>
+          <p class="text-2xl font-bold">BTH-Indoor</p>
+        </div>
+        <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4 text-center">
+          <Icon name="tabler:trees" class="w-8 h-8 text-primary mx-auto mb-2" />
+          <p class="text-sm text-muted uppercase tracking-wide mb-1">Outdoor</p>
+          <p class="text-2xl font-bold">BTH-Outdoor</p>
+        </div>
+      </div>
+      <div class="mt-4 space-y-2 text-base text-muted">
+        <p class="flex items-start gap-2">
+          <Icon name="tabler:info-circle" class="w-4 h-4 mt-1 flex-shrink-0" />
+          <span>Open your device's Bluetooth settings and select the speaker zone you want.</span>
+        </p>
+        <p class="flex items-start gap-2">
+          <Icon name="tabler:info-circle" class="w-4 h-4 mt-1 flex-shrink-0" />
+          <span>Only one device can connect to each speaker at a time.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- LED Lighting -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:bulb" class="w-5 h-5 text-primary" />
+        LED Lighting
+      </h2>
+      <p class="text-muted mb-3">Hidden LED strips throughout the treehouse create a warm, magical ambiance.</p>
+      <div class="space-y-3 text-lg">
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:toggle-right" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+          <span>Main LED zones can be controlled via the wall switches near the entry and bedroom loft.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:device-mobile" class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+          <span>Color and brightness can also be adjusted via the LED controller app (instructions on the tablet near the kitchen).</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:moon" class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+          <span>Try the "warm glow" preset for evenings — it's a guest favorite.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TV & Streaming -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:device-tv" class="w-5 h-5 text-primary" />
+        TV & Streaming
+      </h2>
+      <div class="space-y-3 text-lg">
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:player-play" class="w-5 h-5 text-muted mt-1 flex-shrink-0" />
+          <span>The TV is equipped with <strong>Roku/Fire TV</strong> with streaming apps pre-installed.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:login" class="w-5 h-5 text-muted mt-1 flex-shrink-0" />
+          <span>You can log into your own streaming accounts (Netflix, Hulu, etc.). <strong>Please log out before checkout.</strong></span>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:hand-click" class="w-5 h-5 text-muted mt-1 flex-shrink-0" />
+          <span>Remote is on the coffee table or charging station near the kitchen.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thermostat -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:temperature" class="w-5 h-5 text-primary" />
+        Smart Thermostat
+      </h2>
+      <div class="space-y-3 text-lg">
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:adjustments" class="w-5 h-5 text-muted mt-1 flex-shrink-0" />
+          <span>The thermostat is located on the wall near the main living area. Tap to wake, then adjust the temperature.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:snowflake" class="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+          <span>In winter, we recommend keeping it set to <strong>68-72&deg;F</strong>. The treehouse is well-insulated but takes a bit to warm up.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:sun" class="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" />
+          <span>In summer, open the windows for fresh mountain air — it's often cooler than AC.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:info-circle" class="w-5 h-5 text-muted mt-1 flex-shrink-0" />
+          <span>Please don't set the thermostat below 60&deg;F or above 78&deg;F.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
