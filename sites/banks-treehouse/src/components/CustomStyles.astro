@@ -1,63 +1,55 @@
 ---
-import '@fontsource-variable/inter';
-
-// 'DM Sans'
-// Nunito
-// Dosis
-// Outfit
-// Roboto
-// Literata
-// 'IBM Plex Sans'
-// Karla
-// Poppins
-// 'Fira Sans'
-// 'Libre Franklin'
-// Inconsolata
-// Raleway
-// Oswald
-// 'Space Grotesk'
-// Urbanist
+import '@fontsource-variable/playfair-display';
+import '@fontsource/nunito/400.css';
+import '@fontsource/nunito/600.css';
+import '@fontsource/nunito/700.css';
+import '@fontsource/caveat/400.css';
+import '@fontsource/caveat/700.css';
 ---
 
 <style is:inline>
   :root {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'Nunito';
+    --aw-font-serif: 'Playfair Display Variable';
+    --aw-font-heading: 'Playfair Display Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: rgb(34 87 57);
+    --aw-color-secondary: rgb(86 125 70);
+    --aw-color-accent: rgb(193 122 55);
 
-    --aw-color-text-heading: rgb(0 0 0);
-    --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
+    --aw-color-text-heading: rgb(53 38 24);
+    --aw-color-text-default: rgb(64 52 42);
+    --aw-color-text-muted: rgb(64 52 42 / 66%);
+    --aw-color-bg-page: rgb(252 249 243);
 
-    --aw-color-bg-page-dark: rgb(3 6 32);
+    --aw-color-bg-page-dark: rgb(26 22 18);
 
     ::selection {
-      background-color: lavender;
+      background-color: rgb(193 122 55 / 30%);
     }
   }
 
   .dark {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'Nunito';
+    --aw-font-serif: 'Playfair Display Variable';
+    --aw-font-heading: 'Playfair Display Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: rgb(86 125 70);
+    --aw-color-secondary: rgb(34 87 57);
+    --aw-color-accent: rgb(211 152 89);
 
-    --aw-color-text-heading: rgb(247, 248, 248);
-    --aw-color-text-default: rgb(229 236 246);
-    --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: rgb(3 6 32);
+    --aw-color-text-heading: rgb(245 240 232);
+    --aw-color-text-default: rgb(229 220 210);
+    --aw-color-text-muted: rgb(229 220 210 / 66%);
+    --aw-color-bg-page: rgb(26 22 18);
 
     ::selection {
-      background-color: black;
+      background-color: rgb(193 122 55 / 40%);
       color: snow;
     }
+  }
+
+  .font-accent {
+    font-family: 'Caveat', cursive;
   }
 </style>
