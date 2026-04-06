@@ -1,0 +1,107 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Guest Guide',
+  description: 'Quick-reference guide for Banks Treehouse guests. WiFi, hot tub, checkout, emergency info, and more.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+const guides = [
+  {
+    title: 'WiFi',
+    href: '/guide/wifi',
+    icon: 'tabler:wifi',
+    description: 'Network name and password',
+  },
+  {
+    title: 'Hot Tub',
+    href: '/guide/hot-tub',
+    icon: 'tabler:droplet-filled',
+    description: 'Instructions, safety, and hours',
+  },
+  {
+    title: 'Smart Home',
+    href: '/guide/smart-home',
+    icon: 'tabler:smart-home',
+    description: 'Speakers, lighting, TV, and thermostat',
+  },
+  {
+    title: 'House Rules',
+    href: '/guide/house-rules',
+    icon: 'tabler:clipboard-list',
+    description: 'Guest policies and quiet hours',
+  },
+  {
+    title: 'Checkout',
+    href: '/guide/checkout',
+    icon: 'tabler:door-exit',
+    description: 'Checkout time and checklist',
+  },
+  {
+    title: 'Area Guide',
+    href: '/guide/area',
+    icon: 'tabler:map-2',
+    description: 'Gas, groceries, restaurants, activities',
+  },
+  {
+    title: 'Emergency',
+    href: '/guide/emergency',
+    icon: 'tabler:urgent',
+    description: 'Emergency contacts and nearest hospital',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-3xl">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">Banks Treehouse</h1>
+      <p class="text-xl text-muted">Guest Guide</p>
+      <p class="text-sm text-muted mt-2">Scan a QR code or tap a link below</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {guides.map((guide) => (
+        <a
+          href={guide.href}
+          class="flex items-center gap-4 p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary hover:shadow-md transition-all bg-white dark:bg-slate-800"
+        >
+          <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <Icon name={guide.icon} class="w-7 h-7" />
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">{guide.title}</h2>
+            <p class="text-sm text-muted">{guide.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- QR Code Print Section -->
+    <div class="mt-16 border-t border-gray-200 dark:border-gray-700 pt-10 print:break-before-page">
+      <h2 class="text-2xl font-bold text-center mb-2">QR Codes</h2>
+      <p class="text-sm text-muted text-center mb-8">Print this page and place in the treehouse for guest reference.</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+        {guides.map((guide) => (
+          <div class="text-center">
+            {/* QR code placeholder — replace with generated QR images */}
+            <div class="w-28 h-28 mx-auto mb-2 border-2 border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center bg-gray-50 dark:bg-slate-700">
+              <div class="text-center">
+                <Icon name={guide.icon} class="w-8 h-8 text-muted mx-auto mb-1" />
+                <span class="text-xs text-muted block">QR</span>
+              </div>
+            </div>
+            <p class="text-sm font-medium">{guide.title}</p>
+            <p class="text-xs text-muted">bankstreehouse.com{guide.href}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

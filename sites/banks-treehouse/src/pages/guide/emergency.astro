@@ -1,0 +1,100 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Emergency Info',
+  description: 'Emergency contacts and nearest hospital information for Banks Treehouse guests.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-2xl">
+    <a href="/guide" class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-8">
+      <Icon name="tabler:arrow-left" class="w-4 h-4" />
+      Back to Guide
+    </a>
+
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
+        <Icon name="tabler:urgent" class="w-10 h-10" />
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight">Emergency</h1>
+    </div>
+
+    <!-- 911 -->
+    <div class="bg-red-50 dark:bg-red-900/20 rounded-2xl border-2 border-red-300 dark:border-red-700 p-8 mb-6 text-center">
+      <p class="text-sm text-red-600 dark:text-red-400 uppercase tracking-wide font-semibold mb-2">Emergency Services</p>
+      <p class="text-6xl font-bold text-red-700 dark:text-red-400">911</p>
+    </div>
+
+    <!-- Property Address -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-3">
+        <Icon name="tabler:map-pin" class="w-5 h-5 text-primary" />
+        Property Address
+      </h2>
+      <p class="text-lg"><strong>Banks, Idaho</strong></p>
+      <p class="text-muted">Exact address provided at check-in. If you need to give your location to 911, refer to the address card posted by the front door.</p>
+    </div>
+
+    <!-- Nearest Hospitals -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-4">
+        <Icon name="tabler:building-hospital" class="w-5 h-5 text-primary" />
+        Nearest Hospitals
+      </h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+            <Icon name="tabler:clock" class="w-5 h-5" />
+          </div>
+          <div>
+            <p class="font-semibold text-lg">St. Luke's McCall</p>
+            <p class="text-muted">Approximately 45 minutes north</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+            <Icon name="tabler:clock" class="w-5 h-5" />
+          </div>
+          <div>
+            <p class="font-semibold text-lg">St. Alphonsus Boise</p>
+            <p class="text-muted">Approximately 1 hour south (full trauma center)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Non-Emergency -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-3">
+        <Icon name="tabler:phone" class="w-5 h-5 text-primary" />
+        Non-Emergency
+      </h2>
+      <div class="space-y-3 text-lg">
+        <div>
+          <p class="font-semibold">Boise County Sheriff</p>
+          <p class="text-muted">For non-emergency law enforcement or noise concerns.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Host Contact -->
+    <div class="bg-primary/5 dark:bg-primary/10 rounded-2xl border border-primary/20 p-6">
+      <h2 class="text-xl font-semibold flex items-center gap-2 mb-3">
+        <Icon name="tabler:user" class="w-5 h-5 text-primary" />
+        Your Host
+      </h2>
+      <div class="text-lg">
+        <p class="font-semibold">Rusty</p>
+        <p class="text-muted">Phone number provided at check-in.</p>
+        <p class="text-muted mt-2">For non-urgent property issues (water, power, heating, etc.), message Rusty directly. For Airbnb booking issues, use the Airbnb app.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,94 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'House Rules',
+  description: 'House rules and guest policies for Banks Treehouse.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-12 sm:py-16 mx-auto max-w-2xl">
+    <a href="/guide" class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-8">
+      <Icon name="tabler:arrow-left" class="w-4 h-4" />
+      Back to Guide
+    </a>
+
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-primary/10 text-primary">
+        <Icon name="tabler:clipboard-list" class="w-10 h-10" />
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight">House Rules</h1>
+    </div>
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <ul class="space-y-5 text-lg">
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:users" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">2 guests maximum</p>
+            <p class="text-muted text-base">This is an intimate retreat for couples or solo travelers.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:paw-off" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">No pets</p>
+            <p class="text-muted text-base">To protect the property and local wildlife.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:smoking-no" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">No smoking</p>
+            <p class="text-muted text-base">Anywhere on the property. Fire safety is critical in the forest.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:volume-off" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">Quiet hours: 10 PM - 8 AM</p>
+            <p class="text-muted text-base">Sound carries in the forest. Please keep noise to a minimum.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:clock" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">Check-in: 3:00 PM / Check-out: 11:00 AM</p>
+            <p class="text-muted text-base">Self check-in with smartlock. Code provided before arrival.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:confetti-off" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">No parties or events</p>
+            <p class="text-muted text-base">This property is designed for peaceful retreats, not gatherings.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:deer" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">Respect the wildlife</p>
+            <p class="text-muted text-base">Don't feed or approach wild animals. Secure food and trash properly.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <Icon name="tabler:campfire" class="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+          <div>
+            <p class="font-semibold">Fire pit safety</p>
+            <p class="text-muted text-base">Only use the designated fire pit. Never leave fire unattended. Fully extinguish with water before leaving. Check local burn restrictions before lighting.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="text-center text-muted text-sm">
+      <p>These rules help us keep Banks Treehouse safe, peaceful, and beautiful for every guest. Thank you for being a great guest!</p>
+    </div>
+  </section>
+</Layout>
