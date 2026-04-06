@@ -1,0 +1,57 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Banks Treehouse | A Hand-Crafted Treehouse Retreat in Banks, Idaho',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Banks, Idaho"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book Your Stay',
+        href: 'https://www.airbnb.com/rooms/1110989650136663921',
+        target: '_blank',
+        icon: 'tabler:external-link',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Treehouse nestled among pine trees in Idaho forest',
+    }}
+  >
+    <Fragment slot="title">
+      Your Whimsical Escape Into the Idaho Pines
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      A hand-crafted TinyHome Treehouse nestled in 8 acres of Ponderosa pine forest.
+      Disconnect from the everyday and reconnect with nature in Banks, Idaho.
+    </Fragment>
+  </Hero>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book on Airbnb',
+        href: 'https://www.airbnb.com/rooms/1110989650136663921',
+        target: '_blank',
+        icon: 'tabler:external-link',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready for Your Treehouse Adventure?</Fragment>
+
+    <Fragment slot="subtitle">
+      Book your stay and experience the magic of Banks Treehouse.
+    </Fragment>
+  </CallToAction>
+</Layout>
