@@ -1,0 +1,193 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Experience & Things To Do',
+  description: 'Discover activities at Banks Treehouse and nearby — hot tub, fire pit, forest trails, Payette River rafting, hot springs, hiking, and day trips to Boise and McCall.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Your Adventure Awaits"
+  >
+    <Fragment slot="title">Experience & Things To Do</Fragment>
+    <Fragment slot="subtitle">
+      From quiet moments in the forest to world-class whitewater — there's something for every pace and season.
+    </Fragment>
+  </HeroText>
+
+  <!-- On the Property -->
+  <Features2
+    tagline="Right Outside Your Door"
+    title="On the Property"
+    subtitle="You don't have to go far to find adventure — or peace."
+    columns={3}
+    items={[
+      {
+        title: 'Hot Tub Under the Stars',
+        description: 'Soak surrounded by towering pines with nothing but starlight above. Especially magical on clear winter nights.',
+        icon: 'tabler:bath',
+      },
+      {
+        title: 'Fire Pit Evenings',
+        description: 'Gather around the fire as the forest settles into night. Firewood provided — just bring the marshmallows.',
+        icon: 'tabler:campfire',
+      },
+      {
+        title: 'Lookout Treehouse',
+        description: 'Climb up to the lookout perch for panoramic views of the surrounding forest and distant mountain ridges.',
+        icon: 'tabler:binoculars',
+      },
+      {
+        title: 'Forest Walking Paths',
+        description: 'Wander 8 acres of private Ponderosa pine forest. No trails needed — just pick a direction and explore.',
+        icon: 'tabler:walk',
+      },
+      {
+        title: 'Stargazing',
+        description: 'At nearly 5,000 feet with minimal light pollution, the night sky is breathtaking. The Milky Way is a regular guest.',
+        icon: 'tabler:stars',
+      },
+      {
+        title: 'Bird Watching & Wildlife',
+        description: 'Dozens of bird species call the property home. Deer roam freely, and eagles are a common sight overhead.',
+        icon: 'tabler:feather',
+      },
+    ]}
+  />
+
+  <!-- Nearby Adventures -->
+  <Content
+    isReversed
+    tagline="Nearby Adventures"
+    title="The Payette River Corridor"
+    items={[
+      { title: 'Whitewater Rafting — Class III-IV rapids on the South Fork of the Payette, 10 minutes away' },
+      { title: 'Kayaking & Paddleboarding — calm stretches and rapids for all skill levels' },
+      { title: 'Fly Fishing — prime trout fishing along the river corridor' },
+      { title: 'Kirkham Hot Springs — natural riverside hot springs, 20 minutes north' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      alt: 'Whitewater rafting on the Payette River near Banks, Idaho',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Water, Springs & River Life</h3>
+      Banks sits at the confluence of the North and South Forks of the Payette River — one of Idaho's most
+      iconic river corridors. Whether you're chasing rapids, soaking in natural hot springs, or casting a
+      line, the water is never far away.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    tagline="Trails & Mountains"
+    title="Hiking & Outdoor Recreation"
+    items={[
+      { title: 'Boise National Forest — miles of trails through pristine mountain terrain' },
+      { title: 'Mountain Biking — single-track and forest roads for all abilities' },
+      { title: 'Hunting — elk, deer, and upland birds in season (fall)' },
+      { title: 'Cross-Country Skiing & Snowshoeing — winter wonderland at elevation' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      alt: 'Hiking trail through Idaho mountain forest',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Land Adventures</h3>
+      The mountains surrounding Banks are a four-season playground. Summer brings hiking and biking through
+      alpine meadows and old-growth forest. Fall brings golden aspens and world-class hunting. Winter
+      transforms the landscape into a quiet, snowy retreat.
+    </Fragment>
+  </Content>
+
+  <!-- Day Trips -->
+  <Features2
+    tagline="Worth the Drive"
+    title="Day Trips"
+    subtitle="Explore more of Idaho's best — all within easy driving distance."
+    columns={2}
+    items={[
+      {
+        title: 'Boise (~1 hour south)',
+        description: 'Idaho\'s capital city offers craft breweries, farm-to-table restaurants, the Boise River Greenbelt, and a vibrant downtown. Perfect for a dinner outing or supply run.',
+        icon: 'tabler:building-community',
+      },
+      {
+        title: 'McCall (~1.5 hours north)',
+        description: 'Mountain lake town with Payette Lake, beach activities in summer, and the famous Winter Carnival in January. Charming restaurants and shops.',
+        icon: 'tabler:sailboat',
+      },
+      {
+        title: 'Garden Valley (~20 min north)',
+        description: 'Hot springs, the Middle Fork of the Payette, scenic drives, and a handful of local restaurants. A quieter alternative to Boise for dining.',
+        icon: 'tabler:plant',
+      },
+      {
+        title: 'Bogus Basin (~1.5 hours)',
+        description: 'Boise\'s ski resort with downhill skiing, snowboarding, and tubing in winter. Mountain biking and hiking trails in summer.',
+        icon: 'tabler:snowflake',
+      },
+    ]}
+  />
+
+  <!-- Seasonal Tips -->
+  <Content
+    tagline="Plan Ahead"
+    title="Seasonal Guide"
+    image={{
+      src: 'https://images.unsplash.com/photo-1418985227306-7191ea4e0b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      alt: 'Four seasons in the Idaho mountains — pine forest through the year',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-bold text-lg">Spring (April–June)</h4>
+          <p>Wildflowers, rushing rivers, and warming temperatures. Great for hiking, fishing, and enjoying the property as the forest comes alive.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg">Summer (July–September)</h4>
+          <p>Peak season for rafting, kayaking, and outdoor adventure. Long daylight hours and warm evenings by the fire pit. Book early — this is the most popular time.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg">Fall (October–November)</h4>
+          <p>Golden aspens, crisp mountain air, and fewer crowds. Ideal for couples seeking quiet seclusion. Hunting season for those inclined.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg">Winter (December–March)</h4>
+          <p>Snow-covered pines, hot tub in the cold air, and a cozy treehouse retreat. 4WD or chains recommended for the access road. Skiing at Bogus Basin or Brundage Mountain.</p>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book on Airbnb',
+        href: 'https://www.airbnb.com/rooms/1110989650136663921',
+        target: '_blank',
+        icon: 'tabler:brand-airbnb',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to Explore?</Fragment>
+    <Fragment slot="subtitle">
+      Book your treehouse stay and start planning your Idaho adventure.
+    </Fragment>
+  </CallToAction>
+</Layout>
