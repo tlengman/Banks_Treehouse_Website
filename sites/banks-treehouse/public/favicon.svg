@@ -1,34 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="64" fill="#225739"/>
-  <!-- Tree trunk -->
-  <rect x="232" y="180" width="48" height="220" rx="6" fill="#8B5E3C"/>
-  <!-- Tree branches (left and right) -->
-  <rect x="200" y="240" width="24" height="8" rx="4" fill="#8B5E3C" transform="rotate(-30 212 244)"/>
-  <rect x="288" y="240" width="24" height="8" rx="4" fill="#8B5E3C" transform="rotate(30 300 244)"/>
-  <!-- Treehouse cabin -->
-  <rect x="192" y="160" width="128" height="90" rx="8" fill="#C17A37"/>
-  <!-- Cabin roof -->
-  <polygon points="176,165 256,100 336,165" fill="#352618"/>
-  <!-- Cabin window -->
-  <rect x="236" y="185" width="40" height="35" rx="4" fill="#FCF9F3"/>
-  <line x1="256" y1="185" x2="256" y2="220" stroke="#C17A37" stroke-width="3"/>
-  <line x1="236" y1="202" x2="276" y2="202" stroke="#C17A37" stroke-width="3"/>
-  <!-- Cabin door -->
-  <rect x="218" y="220" width="24" height="30" rx="3" fill="#352618"/>
-  <!-- Platform/deck -->
-  <rect x="176" y="248" width="160" height="12" rx="4" fill="#A0622E"/>
-  <!-- Pine tree left -->
-  <polygon points="120,400 148,260 176,400" fill="#1B4D30"/>
-  <polygon points="125,350 148,230 171,350" fill="#225739"/>
-  <!-- Pine tree right -->
-  <polygon points="336,400 364,260 392,400" fill="#1B4D30"/>
-  <polygon points="341,350 364,230 387,350" fill="#225739"/>
-  <!-- Ground -->
-  <ellipse cx="256" cy="400" rx="180" ry="20" fill="#1B4D30"/>
-  <!-- Stars -->
-  <circle cx="100" cy="80" r="4" fill="#FCF9F3" opacity="0.8"/>
-  <circle cx="400" cy="60" r="3" fill="#FCF9F3" opacity="0.7"/>
-  <circle cx="80" cy="140" r="3" fill="#FCF9F3" opacity="0.6"/>
-  <circle cx="430" cy="130" r="4" fill="#FCF9F3" opacity="0.7"/>
-  <circle cx="300" cy="50" r="3" fill="#FCF9F3" opacity="0.5"/>
+  <!-- Forest green background -->
+  <rect width="512" height="512" rx="80" fill="#225739"/>
+  <!-- Elevated cabin body — large, cream -->
+  <rect x="130" y="230" width="252" height="160" rx="12" fill="#FCF9F3"/>
+  <!-- Bold triangular roof — warm amber -->
+  <polygon points="100,240 256,100 412,240" fill="#C17A37"/>
+  <!-- Single large window — green cutout for contrast -->
+  <rect x="216" y="270" width="80" height="70" rx="8" fill="#225739"/>
+  <!-- Stilts — two simple legs to suggest "elevated/treehouse" -->
+  <rect x="175" y="390" width="24" height="80" rx="4" fill="#C17A37"/>
+  <rect x="313" y="390" width="24" height="80" rx="4" fill="#C17A37"/>
 </svg>
